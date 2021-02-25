@@ -1,39 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html dir="ltr" lang="UTF-8">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="description" content="Bootstrap 3 Website Template" />
+
     <!-- Stylesheets
     ============================================= -->
-	<link rel="icon" type="image/png" sizes="16x16" href="<c:url value='/resources/images/favicon/favicon-16x16.png' />">
+		<link rel="icon" type="image/png" sizes="16x16" href="<c:url value='/resources/images/favicon/favicon-16x16.png' />">
 	<link rel="icon" type="image/png" sizes="32x32" href="<c:url value='/resources/images/favicon/favicon-32x32.png'/>">
 	<link href="http://fonts.googleapis.com/css?family=PT+Sans:300,400,500,600,700" rel="stylesheet" type="text/css" />
-	<!-- <link rel="stylesheet" href="css/bootstrap.css" type="text/css" /> -->
-	      <link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.css'/>" type="text/css" />
-	      
+	<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.css'/>" type="text/css" />
 	<link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>"type="text/css" />
 	<link rel="stylesheet"  href="<c:url value='/resources/css/dark.css'/>" type="text/css" />
 	<link rel="stylesheet" href="<c:url value='/resources/css/font-icons.css'/>" type="text/css" />
 	<link rel="stylesheet" href="<c:url value='/resources/css/animate.css'/>" type="text/css" />
 	<link rel="stylesheet"  href="<c:url value='/resources/css/magnific-popup.css'/>"  type="text/css" />
-	<link rel="stylesheet"href="<c:url value='/resources/css/responsive.css'/>"  type="text/css" />
-	   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	   <!--[if lt IE 9]>
+ 	<link rel="stylesheet" href="<c:url value='/resources/css/responsive.css'/>"  type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!--[if lt IE 9]>
     	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
+
     <!-- External JavaScripts
     ============================================= -->
-       <script src="<c:url value='/resources/js/jquery.js'/>"> </script>
-<!-- <script type="text/javascript" src="js/plugins.js"></script> -->
-       <script src="<c:url value='/resources/js/plugins.js'/>"> </script>
+	<script src="<c:url value='/resources/js/jquery.js'/>"> </script>
+	<script src="<c:url value='/resources/js/plugins.js'/>"> </script>
+
     <!-- Document Title
     ============================================= -->
 	<title>Hotel Delluna</title>
+
 
 </head>
 
@@ -46,21 +47,26 @@
         <!-- Header
         ============================================= -->
         <header id="header" class="full-header">
+
             <div id="header-wrap">
+
                 <div class="container clearfix">
+
                     <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
-             <!-- Logo
+
+                    <!-- Logo
                     ============================================= -->
-                    <div id="logo">
+                 <div id="logo">
                         <a href= "<c:url value='/'/>" class="standard-logo" data-dark-logo="<c:url value='/resources/images/logo/mainlogo.png'/>"><img src="<c:url value='/resources/images/logo/mainlogo.png'/>" alt="Chocolat Logo"></a>
                         <a href="<c:url value='/'/>" class="retina-logo" data-dark-logo="<c:url value='/resources/images/logo/mainlogo.png' />"><img src="<c:url value='/resources/images/logo/mainlogo.png'/>" alt="Chocolat Logo"></a>                   
                     </div><!-- #logo end -->
-                                    <!-- Primary Navigation
+
+                                     <!-- Primary Navigation
                     ============================================= -->
-                    <nav id="primary-menu">
+                         <nav id="primary-menu">
 
                         <ul class="">
-                            <li ><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a>
+                            <li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a>
                                         <ul>                                
                                     		<li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a></li>
                                     		<li><a href="<c:url value="/Location"/>"><div>호텔위치</div></a></li>
@@ -90,7 +96,7 @@
                                     <li><a href="<c:url value="/dining-1"/>"><div>파노라마 (올 데이 다이닝)</div></a></li>
                                 </ul>
                             </li>
-                            <li><a href="#" onclick="return false;"><div>부대시설</div></a>
+                            <li class="current"><a href="#" onclick="return false;"><div>부대시설</div></a>
                                 <ul>
                                 	<li><a href="<c:url value="/menu-item"/>"><div>사계절 온수풀 해온</div></a></li>
                                 	<li><a href="<c:url value="/menu-item2"/>"><div>해온 루프탑 테라스</div></a></li>
@@ -101,11 +107,11 @@
                             <c:choose>
 	                            <c:when test="${userId ne null}">
 		                            <li><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>   
-		                            <li class="current"><a href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회 및 취소</div></a></li>
+		                            <li><a href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회 및 취소</div></a></li>
 	                            </c:when>
 	                           <c:otherwise>
 		                            <li><a href="<c:url value='/member/LoginLogOut'/>"><div>예약하기</div></a></li>   
-		                            <li class="current"><a href="<c:url value='/member/LoginLogOut'/>"><div>예약조회 및 취소</div></a></li>
+		                            <li><a href="<c:url value='/member/LoginLogOut'/>"><div>예약조회 및 취소</div></a></li>
 	                           </c:otherwise>
                             </c:choose>
                             
@@ -128,204 +134,219 @@
           </div>
 
         </header><!-- #header end -->
-
+        
         <!-- Page Title
         ============================================= -->
-        <!-- Contact Form & Map Overlay Section
-        ============================================= -->
-      <section id="page-title" class="page-title-parallax"
-style="background-image: url('<c:url value="/resources/images/hotel-about/main.jpg"/>'); padding: 120px 0;"
-	data-stellar-background-ratio="0.3">
+        <section id="page-title" class="page-title-parallax"
+         style="background-image: url('<c:url value="/resources/images/favicon/ba.jpg"/>'); 
+         padding: 300px 0;" data-stellar-background-ratio="0.3">
 
-            <div class="container clearfix" style="border-width:3px;">
-                <h1>예약 조회/취소</h1>
-                
-                <ol class="breadcrumb">
-                    <li><a href="<c:url value="/"/>">홈</a></li>
-                    <li><a href="<c:url value="/hotel-About-Us"/>">호텔소개</a></li>
-                    <li class="active">예약 조회/취소</li>
-                </ol>
-            </div>
-
-   	  </section><!-- #page-title end -->
-   	  <p>
             <div class="container clearfix">
-
-                <!-- Contact Form Overlay
-                ============================================= -->
-                <div id="contact-form-overlay" class="clearfix bgcolor-grey">
-
-                    <div class="fancy-title title-dotted-border">
-                        <h3>예약 조회 및 취소</h3>
-                    </div>
-
-                    <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!">
-                    </div>
-                   
-                     <c:if test="${confirmationPayment eq null}">
-                             <span style="color: red"> 현재 조회된 결과가 없습니다</span>  
-                      </c:if>
-                    <!-- Contact Form
-                    ============================================= -->
-                       <c:if test="${confirmationPayment ne null}">
-                    <form>
-					<%-- <input type="hidden" name="id" id="reservation_number" value="${model.id}"> --%>
-			
-						 	<div class="col_full">
-							<label for="template-contactform-name">예약번호</label><br>
-							<div class="well well-sm"><c:out value="${model.id}" /></div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-6">
-							<label for="template-contactform-name">아이디</label><br>
-							<div class="well well-sm"><c:out value="${model.userId}" /></div>
-						</div> 
-						
-						
-                      	 <div class="col-md-6">
-							<label for="template-contactform-name">룸 번호</label><br>
-							<div class="well well-sm"><c:out value="${model.roomType}"/></div>
-						</div> 
-						
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<label for="template-contactform-name">성인</label><br>
-							<div class="well well-sm"><c:out value="${model.adult}" /></div>
-						</div>
-
-						<div class="col-md-6">
-							<label for="template-contactform-name">어린이</label><br>
-							<div class="well well-sm"><c:out value="${model.child}" /></div>
-						</div>
-					</div>
-					
-					<div class="col_full">
-							<label for="template-contactform-name">가격</label><br>
-							<div class="well well-sm"><fmt:formatNumber value="${model.price}" pattern="#,###" /></div>
-					</div>
-					
-                        <div class="clearfix" style=" text-align:center;" >
-		                        <c:if test="${confirmation_payment eq '0'}">
-		                           <button type="button" id="pay"  class="button button-medium button-reveal button-3d button-rounded tright nomargin" style="color:black; ">
-		                                <span >결제하기</span> 
-		                                <i class="icon-angle-right"></i>
-		                               </button>
-                             </c:if>
-	                                <c:if test="${confirmationPayment eq '1' || confirmationPayment eq '0'}">
-	                       
-	                                <button type="button" id="cancel" class="button button-medium button-reveal button-3d button-rounded tright nomargin" style="color:black;">
-	                                <span>예약취소</span> <i class="icon-angle-right"></i></button>
-	                                         <div id ="PWconfirm">   </div>
-	                                   <div class="col_full">
-								<!-- <label for="template-contactform-name">결제 확인</label> --><br>
-								  <div class="well well-sm" id ="passwordCheck">
-									<input type="password" id="passwordCheck2" class="well well-sm"  size="90" placeholder="회원님의 비밀번호를 입력해주세요"> 
-									<button type="button" id="cancelOk" onclick="ReservationCancel()" class="button button-medium button-reveal button-3d button-rounded tright nomargin" style="color:black;">
-									     확인<i class="icon-angle-right"  ></i></button>
-									</div>
-						       </div> 
-                                </c:if>
-                                </div>
-                        </form>
-                         </c:if>
-                       <script>
-                       
-                       $("#pay").click(function(){
-                    	   location.href = "${pageContext.request.contextPath}/reservation/ReservationPay?id=${model.id}"
-                       });
-                       
-                       $("#passwordCheck").hide();
-                       $("#cancel").click(function(){ //예약취소 버튼을 클릭 시 
-                    	   $("#passwordCheck").show();
-                       });
-
-               	   function ReservationCancel(){ //확인버튼 클릭 시 
-               	    $.ajax({
-       			    type:'POST',
-       			    url:'${pageContext.request.contextPath}/reservation/ReservationPasswordCheck',
-       			    data:{
-       			    	"userId" : "${model.userId}",
-       			    	"password" : $("#passwordCheck2").val()
-       			    },
-       			    success: function(result) {
-       		                if(result)  {
-       		                	//alert('예약 취소 성공');
-       		                  $("#passwordCheck").hide();
-       		                  $("#cancel").hide();
-       		                  $("#pay").hide();
-       		                  $("#PWconfirm").html('<span style="color: blue">예약 취소가 완료되었습니다 감사합니다.</span>');
-       		                }
-       		                else  alert('비밀번호를 확인해주세요');
-       		                }
-       		          });//ajax
-               	   }
-	             </script>
-
-                    <script type="text/javascript">
-                        $("#template-contactform").validate({
-                            submitHandler: function(form) {
-                                $('.form-process').fadeIn();
-                                $(form).ajaxSubmit({
-                                    target: '#contact-form-result',
-                                    success: function() {
-                                        $('.form-process').fadeOut();
-                                        $('#template-contactform').find('.sm-form-control').val('');
-                                        $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
-                                        IGNITE.widget.notifications($('#contact-form-result'));
-                                    }
-                                });
-                            }
-                        });
-                    </script>
-                    
-             
-                    <div class="line"></div>
-
-                    <!-- Contact Info
-                    ============================================= -->
-                 
-
-                    <!-- Twitter
-                    ============================================= -->
-                  
-                        <script type="text/javascript">
-
-                            jQuery(document).ready(function($){
-                                $.getJSON('include/twitter/tweets.php?username=envato&count=3', function(tweets){
-                                    $("#twitter-scroller .slider-wrap").html(sm_format_twitter3(tweets));
-                                });
-                            });
-
-                        </script>
-
-                    </div><!-- Twitter End -->
-
-                </div><!-- Contact Form Overlay End -->
-
+               
+             <!-- 여기 글적으면 메인에 글씨  -->
+              
+              
+      
             </div>
+
+   	  </section><!-- #page-title end -->        
+
+        <!-- Content
+        ============================================= -->
+        <section id="content">
+
+            <div class="content-wrap bgcolor-grey-light">
+
+                <div class="container clearfix">
+
+                    <!-- Portfolio Single Image
+                    ============================================= -->
+                    <div class="col_two_third portfolio-single-image nobottommargin">
+                    <!--menu-item.jpg  -->
+                        <img src="<c:url value="/resources/images/favicon/ba2.jpg"/>" alt="" width="300" height="430">                     
+                    </div><!-- .portfolio-single-image end -->
+
+                    <!-- Portfolio Single Content
+                    ============================================= -->
+                    <div class="col_one_third portfolio-single-content col_last nobottommargin">
+
+                        <!-- Portfolio Single - Description
+                        ============================================= -->
+                        <div class="fancy-title title-bottom-border">
+                            <h1>프라이빗 카바나</h1>
+                        </div> <p>
+					                        럭셔리한 쉼표, 롯데호텔제주 프라이빗 카바나</p> 
+					- 42인치 TV와 편안한 소파 베드를 완비한 최고급 카바나<br>
+					- 키즈풀 앞에 위치한 카바나에서 아이들의 물놀이 모습을 보며, 맛있는 식사를 즐겨보세요.<br><br>
+					<b>☞ 시간 및 요금</b> <br>
+					11월 ~ 4월<br>
+					1회 09:30~13:00 : ￦100,00　2회 14:00~18:00 : ￦150,00　3회 19:00~23:00 : ￦150,00<br>
+					5월 ~ 10월<br>
+					1회 09:30~13:00 : ￦150,00　2회 14:00~18:00 : ￦200,00　3회 19:00~23:00 : ￦200,00  <br><br>
+                    
+                       
+                        <!-- Portfolio Single - Description End -->
+
+                        <!-- Portfolio Single - Share
+                        ============================================= -->
+                        <div class="si-share clearfix">
+                            <span>Share:</span>
+                            <div>
+                       <a href="https://www.facebook.com/" class="social-icon si-light si-small si-facebook">
+                            	<i class="icon-facebook"></i>
+                                <i class="icon-facebook"></i></a>
+                            <a href="https://twitter.com/?lang=ko" class="social-icon si-light si-small si-twitter">
+                                <i class="icon-twitter"></i>
+                                <i class="icon-twitter"></i></a>
+                            <a href="https://www.pinterest.co.kr/" class="social-icon si-light si-small si-pinterest">
+                                <i class="icon-pinterest"></i>
+                                <i class="icon-pinterest"></i></a>
+                            <a href="https://plus.google.com/" class="social-icon si-light si-small si-gplus">
+                                <i class="icon-gplus"></i>
+                                <i class="icon-gplus"></i></a>
+                            <a href="https://www.moakt.com/ko" class="social-icon si-light si-small si-email3">
+                                <i class="icon-email3"></i>
+                                <i class="icon-email3"></i></a>        
+                        	</div>
+                        </div>
+                        <!-- Portfolio Single - Share End -->
+                    </div><!-- .portfolio-single-content end -->
+
+                    <div class="clear"></div>
+                    
+                            <!-- Comments
+                            ============================================= -->
+                            <div id="comments" class="clearfix">
+
+
+                                <h2 id="comments-title">부대시설 개요 </h2>
+									<b>타입</b> Spa & Garden <br>
+									<b>위치</b>   Garden 1F <br>
+									<b>이용시간</b><br>
+									   09:00 ~ 23:00 (5월~10월)  <br>
+									09:30 ~ 23:00 (11월~4월)
+									<p>
+
+		                                <h2 id="comments-title2">추가 정보 </h2>
+										<b>※ 패키지 특전으로 카바나 이용 시 3회는 이용할 수 없습니다. (개별 예약만 가능) </b><br>
+										
+										<br><br><h2>문의안내</h2>
+										<b>TEL +82-1234-1234 </b><br>
+
+
+                                <!-- Disqus Comments
+                                ============================================= -->
+                                       
+
+                    <div class="divider divider-center"><i class="icon-circle"></i></div>
+
+                    <!-- Related Portfolio Items
+                    ============================================= -->
+                    <h3>갤러리</h3>
+
+                    <div id="related-portfolio" class="owl-carousel portfolio-carousel">
+
+                        <div class="oc-item">
+                            <div class="iportfolio">
+                                <div class="portfolio-image">
+                                    <a href="portfolio-single.html"><img src="<c:url value="/resources/images/favicon/ba.jpg"/>" alt=""></a>
+                                	<div class="portfolio-overlay">
+                                    	<a href="<c:url value="/resources/images/favicon/ba.jpg"/>" class="left-icon" data-lightbox="image">
+                                    	<i class="icon-picture"></i></a>
+                                                                 
+                                	</div>
+                            	</div>
+                            	<div class="portfolio-desc">
+                            		              
+                            	</div>
+                        	</div>                        
+                        </div>
+                        
+                        <div class="oc-item">
+                            <div class="iportfolio">
+                                <div class="portfolio-image">
+                                    <a href="#"><img src="<c:url value="/resources/images/favicon/ba2.jpg"/>" alt=""></a>
+                                    <div class="portfolio-overlay">
+                                    	<a href="<c:url value="/resources/images/favicon/ba2.jpg"/>" class="left-icon" data-lightbox="image"><i class="icon-picture"></i></a>
+                                                                    
+                                    </div>
+                                </div>
+                      
+                        	</div>
+                        </div>
+                        
+                        <div class="oc-item">
+                            <div class="iportfolio">
+                                <div class="portfolio-image">
+                                    <a href="#"><img src="<c:url value="/resources/images/favicon/ba3.jpg"/>" alt=""></a>
+                                    <div class="portfolio-overlay">
+                                        <a href="<c:url value="/resources/images/favicon/ba3.jpg"/>" class="left-icon" data-lightbox="image"><i class="icon-picture"></i></a>
+                                                            
+                                    </div>
+                                </div>
+                                <div class="portfolio-desc">
+                                       
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
+                        <div class="oc-item">
+                            <div class="iportfolio">
+                                <div class="portfolio-image">
+                                    <a href="#"><img src="<c:url value="/resources/images/favicon/ba6.jpg"/>" alt=""></a>
+                                    <div class="portfolio-overlay">
+                                        <a href="<c:url value="/resources/images/favicon/ba6.jpg"/>" class="left-icon" data-lightbox="image"><i class="icon-picture"></i></a>
+                                                                   
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        
+                        <div class="oc-item">
+                            <div class="iportfolio">
+                                <div class="portfolio-image">
+                                    <a href="#"><img src="<c:url value="/resources/images/favicon/ba5.jpg"/>" alt=""></a>
+                                    <div class="portfolio-overlay">
+                                        <a href="<c:url value="/resources/images/favicon/ba5.jpg"/>" class="left-icon" data-lightbox="image"><i class="icon-picture"></i></a>
+                                                            
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        
+                    </div><!-- .portfolio-carousel end -->
+
                     <script type="text/javascript">
 
                         jQuery(document).ready(function($) {
 
-                            var ocTeam = $("#oc-team-list");
+                            var relatedPortfolio = $("#related-portfolio");
 
-                            ocTeam.owlCarousel({
+                            relatedPortfolio.owlCarousel({
+                                margin: 20,
+                                nav: true,
+                                dots:true,
+                                autoplay: true,
+                                autoplayHoverPause: true,
                                 responsive:{
                                     0:{ items:1 },
-                                    600:{ items:1 },
-                                    1000:{ items:2 }
-                                },
-                                margin: 30,
-                                nav: false,
-                                dots:true
+                                    480:{ items:2 },
+                                    768:{ items:3 },
+                                    992: { items:4 }
+                                }
                             });
 
                         });
 
-                    </script>       
-                    <br>             
+                    </script>
+                </div>
+
+          </div>
+
+        </section><!-- #content end -->
 
         <!-- Footer
         ============================================= -->
@@ -341,16 +362,21 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
 
                         <div class="widget clearfix">
 
-  <h3>(주)호텔 델루나 <span>02-1544-1111</span></h3>
-                          
+                            <h3>(주)호텔 델루나 <span>02-1544-1111</span></h3>
+                            <p>Email : hoteldelluna@hoteldelluna.co.kr</p>
 
                             <div class="line" style="margin: 30px 0;"></div>
 
                             <div class="col_half">
                                 <div class="widget subscribe-widget clearfix">
-                               
-                               
-                                     
+                                   
+                                    <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
+                                    <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
+                                        <div class="input-group divcenter">                                            
+                                            
+                                            <span class="input-group-btn">
+                                              
+                                            </span>                                        </div>
                                     </form>
                                     <script type="text/javascript">
                                         $("#widget-subscribe-form").validate({
@@ -380,7 +406,7 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
 
                             			<div class="widget_links clearfix">
                                 			<ul>
-                                    			<li><a href="<c:url value='/'/>"><div>메인</div></a></li>
+                                    		<li><a href="<c:url value='/'/>"><div>메인</div></a></li>
                                     		<li><a href="<c:url value='/notice/NoticeList'/>"><div>공지사항</div></a></li>
                                     		<li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a></li>
                                     		<li><a href="<c:url value="/Location"/>"><div>호텔위치</div></a></li>
@@ -413,7 +439,7 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
                             <h4>Hours</h4>
                         </div>
 
-                         <b>호텔서비스</b>
+                       <b>호텔서비스</b>
                          <br>00:00 ~ 24:00<br>
                          <br>
                         <ul class="nobottommargin nobullets">
@@ -431,7 +457,7 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
                         </div>
 
                         <ul class="nobottommargin nobullets">
-                             <li>63535, 제주특별자치도</li>
+                            <li>63535, 제주특별자치도</li>
                             <li>서귀포시 중문관광로 72번길, 호텔 델루나.</li>
                         </ul>
                         </div>                                                
@@ -443,18 +469,17 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
 
             <!-- Copyrights
             ============================================= -->
-         <div id="copyrights">
+               <div id="copyrights">
                 <div class="container clearfix">
-
                     <div class="col_half">
-                        <img src="<c:url value='/resources/images/logo/footer-logo.png'/>" alt="" class="footer-logo standard-logo">
+                     <img src="<c:url value='/resources/images/logo/footer-logo.png'/>" alt="" class="footer-logo standard-logo">
                         <img src="<c:url value='/resources/images/logo/footer-logo-large.png' />" alt="" class="footer-logo retina-logo">
                         Copyright &copy; 2020 Hotel Delluna. All Rights Reserved.
                     </div>
 
                     <div class="col_half col_last tright">
                         <div class="copyrights-menu copyright-links fright clearfix">
-                            <a href="<c:url value='/notice/NoticeList'/>">공지사항</a>
+                              <a href="<c:url value='/notice/NoticeList'/>">공지사항</a>
                              <a href="<c:url value="/hotel-About-Us"/>">호텔소개</a>
                               <a href="<c:url value="/deluxe-1"/>">객실</a>
                                <a href="<c:url value='/reservation/ReservationSelect'/>">예약조회 및 취소</a>
@@ -462,23 +487,21 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
                         </div>
                         
                         <div class="fright clearfix">
-                          <a href="https://www.facebook.com/" class="social-icon si-small si-borderless nobottommargin si-facebook">
-                                <i class="icon-facebook"></i>
-                                <i class="icon-facebook"></i>
-                            </a>
-                            <a href="https://twitter.com/explore" class="social-icon si-small si-borderless nobottommargin si-twitter">
+                         <a href="https://www.facebook.com/" class="social-icon si-light si-small si-facebook">
+                            	<i class="icon-facebook"></i>
+                                <i class="icon-facebook"></i></a>
+                            <a href="https://twitter.com/?lang=ko" class="social-icon si-light si-small si-twitter">
                                 <i class="icon-twitter"></i>
-                                <i class="icon-twitter"></i>
-                            </a>
-                            <a href="https://github.com/park002" class="social-icon si-small si-borderless nobottommargin si-github">
-                                <i class="icon-github"></i>
-                                <i class="icon-github"></i>
-                            </a>
-                            <a href="https://www.yahoo.com/" class="social-icon si-small si-borderless nobottommargin si-yahoo">
-                                <i class="icon-yahoo"></i>
-                                <i class="icon-yahoo"></i>
-                            </a>
-                          
+                                <i class="icon-twitter"></i></a>
+                            <a href="https://www.pinterest.co.kr/" class="social-icon si-light si-small si-pinterest">
+                                <i class="icon-pinterest"></i>
+                                <i class="icon-pinterest"></i></a>
+                            <a href="https://plus.google.com/" class="social-icon si-light si-small si-gplus">
+                                <i class="icon-gplus"></i>
+                                <i class="icon-gplus"></i></a>
+                            <a href="https://www.moakt.com/ko" class="social-icon si-light si-small si-email3">
+                                <i class="icon-email3"></i>
+                                <i class="icon-email3"></i></a>                   
                         </div>
                     </div>
 
@@ -496,7 +519,7 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
 
     <!-- Footer Scripts
     ============================================= -->
- <script type="text/javascript" src="<c:url value='/resources/js/functions.js'/>"></script>
+     <script type="text/javascript" src="<c:url value="/resources/js/functions.js"/>"></script>
 
 </body>
 </html>

@@ -150,7 +150,7 @@
                             </li>
                             <li><a href="<c:url value="/contact-1"/>"><div>고객의 소리</div></a></li>
                             <c:choose>
-	                            <c:when test="${m_id ne null}">
+	                            <c:when test="${userId ne null}">
 		                            <li class="current"><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>   
 		                            <li><a href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회 및 취소</div></a></li>
 	                            </c:when>
@@ -161,7 +161,7 @@
                             </c:choose>
                             
                                <c:choose>
-                               		<c:when test="${m_id eq null}">         
+                               		<c:when test="${userId eq null}">         
                            		 			<li><a href="<c:url value ='/member/LoginLogOut'/>"><div>로그인</div></a>
                            		 		<ul>
                                 	    	<li><a href="<c:url value ='/member/LoginLogOut'/>"><div>로그인</div></a></li>
@@ -214,8 +214,8 @@
 	      ============================================= -->
 	<form action="<c:url value="/reservation/reservation1" />" method="post">
 	<%-- <script src="<c:url value="/resources/js/moment.js" />"></script> --%>
-	      <input id="dateOne" name="reservation_data_in" type="hidden">
-	      <input id="dateTwo" name="reservation_data_out" type="hidden">
+	      <input id="dateOne" name="reservationDateIn" type="hidden">
+	      <input id="dateTwo" name="reservationDateOut" type="hidden">
 	<section id="content">
 		<div class="content-wrap bgcolor-grey-li2ght">
 			<div class="container clearfix">
@@ -267,7 +267,7 @@
 				    </div>
 	
 				    <div class="col-md-3">
-					<select class="form-control" name="room_type" >
+					<select class="form-control" name="roomType" >
 					  <option value="1">디럭스 더블</option>
 					  <option value="2">디럭스 트윈</option>
 					  <option value="3">패밀리 스위트</option>

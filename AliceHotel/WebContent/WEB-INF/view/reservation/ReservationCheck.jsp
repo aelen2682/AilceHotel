@@ -98,7 +98,7 @@
                             </li>
                             <li><a href="<c:url value="/contact-1"/>"><div>고객의 소리</div></a></li>
                             <c:choose>
-	                            <c:when test="${m_id ne null}">
+	                            <c:when test="${userId ne null}">
 		                            <li class="current"><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>   
 		                            <li><a href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회 및 취소</div></a></li>
 	                            </c:when>
@@ -109,7 +109,7 @@
                             </c:choose>
                             
                                <c:choose>
-                               		<c:when test="${m_id eq null}">         
+                               		<c:when test="${userId eq null}">         
                            		 			<li><a href="<c:url value ='/member/LoginLogOut'/>"><div>로그인</div></a>
                            		 		<ul>
                                 	    	<li><a href="<c:url value ='/member/LoginLogOut'/>"><div>로그인</div></a></li>
@@ -167,30 +167,30 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
                     <!-- Contact Form
                     ============================================= -->
                     <form method="post">
-					<input type="hidden" name="reservation_number" id="reservation_number" value="${dto.reservation_number}">
+					<input type="hidden" name="id" id="reservation_number" value="${model.id}">
 					<div class="row">
 						<div class="col-md-6">
 							<label for="template-contactform-name">예약번호</label><br>
-							<div class="well well-sm"><c:out value="${dto.reservation_number}" /></div>
+							<div class="well well-sm"><c:out value="${model.id}" /></div>
 						</div>
 
 						 <div class="col-md-6">
 							<label for="template-contactform-name">룸 번호</label><br>
-							<div class="well well-sm"><c:out value="${dto.room_type}"/></div>
+							<div class="well well-sm"><c:out value="${model.roomType}"/></div>
 						</div> 
 					</div>
 					
 					<div class="row">
 						<div class="col-md-6">
 							<label for="template-contactform-name">아이디</label><br>
-							<div class="well well-sm"><c:out value="${dto.m_id}" /></div>
+							<div class="well well-sm"><c:out value="${model.userId}" /></div>
 						</div> 
 
 						<div class="col-md-6">
 							<label for="template-contactform-name">예약날짜</label><br>
 							
 							<div class="well well-sm">
-							<c:out value="${dto.reservation_data_in}"/> ~ <c:out value="${dto.reservation_data_out}"/>
+							<c:out value="${model.reservationDateIn}"/> ~ <c:out value="${model.reservationDateOut}"/>
 							<%-- <fmt:formatDate value="${dto.reservation_data_in}" pattern="yyyy-MM-dd"/> ~ 
 							 <fmt:formatDate value="${dto.reservation_data_out}" pattern="yyyy-MM-dd"/> --%>
 							</div>
@@ -199,18 +199,18 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
 					<div class="row">
 						<div class="col-md-6">
 							<label for="template-contactform-name">성인</label><br>
-							<div class="well well-sm"><c:out value="${dto.adult}" /></div>
+							<div class="well well-sm"><c:out value="${model.adult}" /></div>
 						</div>
 
 						<div class="col-md-6">
 							<label for="template-contactform-name">어린이</label><br>
-							<div class="well well-sm"><c:out value="${dto.child}" /></div>
+							<div class="well well-sm"><c:out value="${model.child}" /></div>
 						</div>
 					</div>
 					
 					<div class="col_full">
 							<label for="template-contactform-name">가격</label><br>
-							<div class="well well-sm"><fmt:formatNumber value="${dto.price}" pattern="#,###" /></div>
+							<div class="well well-sm"><fmt:formatNumber value="${model.price}" pattern="#,###" /></div>
 					</div>
 					
 					<div class="col_full">
@@ -228,7 +228,7 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
                         <script>
                         $("#pay").click(function(){
                         	alert('결제가 완료되었습니다 감사합니다');
-	                    	 location.href="${pageContext.request.contextPath}/reservation/ReservationPay?number=${dto.reservation_number}";
+	                    	 location.href="${pageContext.request.contextPath}/reservation/ReservationPay?id=${model.id}";
 	                     });
                         </script>
 

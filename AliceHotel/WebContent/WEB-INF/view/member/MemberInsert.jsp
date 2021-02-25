@@ -32,7 +32,7 @@
        <script src="<c:url value='/resources/js/plugins.js'/>"> </script>
     <!-- Document Title
     ============================================= -->
-	<title>Hotel Delluna</title>
+	<title>Ailce Hotel</title>
 
 </head>
 
@@ -169,7 +169,7 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
                     function duplicate(){
                     	$.ajax({
                            type : 'POST',
-                           url: '${pageContext.request.contextPath}/member/duplicate',
+                           url: 'http://localhost:8090/member/idcheck',
                     	   data : {
                     		   "userId" : $('#m_id').val()
                     	   },

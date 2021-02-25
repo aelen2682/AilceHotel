@@ -32,7 +32,7 @@
        <script src="<c:url value='/resources/js/plugins.js'/>"> </script>
     <!-- Document Title
     ============================================= -->
-	<title>Hotel Delluna</title>
+	<title>Ailce Hotel</title>
 
 </head>
 
@@ -154,7 +154,7 @@
                 <div id="contact-form-overlay" class="clearfix bgcolor-grey">
 
                     <div class="fancy-title title-dotted-border">
-                        <h3>Hotel Delluna </h3>
+                        <h3>Ailce Hotel</h3>
                     </div>
                     <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
          		

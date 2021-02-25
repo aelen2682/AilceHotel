@@ -16,31 +16,31 @@ public class NoticeService {
 	NoticeMapper noticeMapper;
 	
 	//작성
-	public int insertNotice(Notice notice) {
-		return noticeMapper.insertNotice(notice);
-	}	
-	
-	//삭제
-	public int deleteNotice(int id) {
-		return noticeMapper.deleteNotice(id);
-	}
-	
-	//수정
-	public int updateNotice(Notice notice) {
-		return noticeMapper.updateNotice(notice);
-	}
-	
-	public Notice detailNotice(int id) {
-		return noticeMapper.detailNotice(id);
-	}
-	
-	//게시물 총 갯수
-	public int getNoticeListCnt() {
-		return noticeMapper.getNoticeListCnt();				
-	}
-	
-	//전체조회
-	public List<Notice> getNoticeList(Pagination pagination){
-		return noticeMapper.getNoticeList(pagination);
-	}
+		public int NoticeInsert(Notice notice) {
+			return noticeMapper.NoticeInsert(notice);
+		}	
+		
+		//삭제
+		public int NoticeDelete(int id) {
+			return noticeMapper.NoticeDelete(id);
+		}
+		
+		//수정
+		public int NoticeUpdate(Notice notice) {
+			return noticeMapper.Noticeupdate(notice);
+		}
+		
+		public Notice NoticeDetail(int id) {
+			return noticeMapper.NoticeDetail(id);
+		}
+		
+		//게시물 총 갯수
+		public int NoticeListCnt() {
+			return noticeMapper.NoticeListCnt();				
+		}
+		
+		//전체조회
+		public List<Notice> NoticeList(Pagination pagination){
+			return noticeMapper.NoticeList(pagination);
+		}
 }

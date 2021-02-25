@@ -1,7 +1,5 @@
 package hotel.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,92 +12,39 @@ public class ReservationService {
 	@Autowired
 	ReservationMapper reservationMapper;
 
-	//Reservation 리스트 
-	public List<Reservation> ReservationList() {
-		return reservationMapper.selectReservationAll();
+	public void reservation_number(Reservation reservation) {
+		reservationMapper.reservateion_number(reservation);
 	}
 
-	//Reservation id로 정보찾기
-	public Reservation selectById(int id) {
-		return reservationMapper.selectById(id);
-	}
-
-	//Reservation List에서  userId로 정보찾기
-	public List<Reservation> SelectListMemberById(String userId) {
-		return reservationMapper.selectListUserById(userId);
-	}
-
-	//Reservation List에서  reservationDate로 정보찾기
-	public List<Reservation> SelectListDateById(String reservationDate) {
-		return reservationMapper.selectListByDate(reservationDate);
-	}
-
-	//Reservation 중복체크
-	public Reservation SelectByDateName(String reservationDate, String reservationName) {
-		return reservationMapper.selectByDateName(reservationDate, reservationName);
+	public int RoomPrice(Reservation reservation) {
+		return reservationMapper.RoomPrice(reservation);
 	}
 	
-	//Reservation userId로 예약정보 ㅈ찾기.
-	public Reservation SelectMemberById(String userId) {
-		return reservationMapper.selectReservationUserById(userId);
+	public void reservationInsert(Reservation reservation) {
+		reservationMapper.reservationInsert(reservation);
 	}
-
-	//Reservation  추가
-	public int InsertMemberReservation(Reservation reservation) {
-		return reservationMapper.insertUserIdReservation(reservation);
+	
+	public String PayCheck(String userId) {
+		return reservationMapper.PayCheck(userId);
 	}
-
-	//Reservation  수정.
-	public int UpdateMember(Reservation reservation) {
-
-		return reservationMapper.updateUserIdReservation(reservation);
+	
+	public int DuplicateFind(Reservation reservation) {
+		return reservationMapper.DuplicateFind(reservation);
 	}
+	
+	public void PayCheckUpdate(String id) {
+		reservationMapper.PayCheckUpdate(id);
 
-	//Reservation 취소
-	public int DeleteMember(int id) {
-
-		return reservationMapper.deleteUserReservation(id);
 	}
-
-	//Reservation DateChecking
-	public int DateChecking(String reservationDate, String reservationName){
+	public void ReservationDelete() {
+		reservationMapper.ReservationDelete();
 		
-		System.out.println("Service 입력받은 값 : " + reservationDate +","+ reservationName);
-		
-		//Reservation getDateName = reMapper.selectByDateName(reservationDate, reservationName);
-		//Reservation getDate = reMapper.selectByDate(reservationDate);
-		Reservation getDateName = reservationMapper.selectByDateName(reservationDate, reservationName);
-		System.out.println("getDateName:"+getDateName);
-
-		int getId = 0; 
-
-		int num = 0;
-
-		if (getDateName == null) {
-
-			getId = 0;
-
-			System.out.println("getId : " + getId);
-			
-			return 0;
-
-		} else {
-
-				System.out.println("예약 날짜 : "+getDateName.getReservationDate());
-				System.out.println("예약 구장 : " + getDateName.getReservationName());
-				System.out.println("입력받은 구장 : " + reservationName);
-
-				getId = 1;
-
-				if (getDateName.getReservationName().equals(reservationName)) {
-
-					return 1;
-
-				} else {
-
-					num = 2;
-			}
-		}
-		return num;
+	}
+	public Reservation ReservationSelect(String userId) {
+		return reservationMapper.ReservationSelect(userId);
+	}
+	
+	public String SearchPW(String userId) {
+		return reservationMapper.SearchPW(userId);
 	}
 }

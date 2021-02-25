@@ -1,6 +1,10 @@
 package hotel.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,6 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import hotel.model.Reservation;
@@ -22,78 +28,74 @@ public class ReservationController {
 	@Autowired
 	ReservationService reservationService;
 
-	@GetMapping("/list")
-	public String ReservationList(Model m, Reservation reservation, HttpSession session) {
-
-		String userId = (String)session.getAttribute("userId");
-
-		System.out.println("userId : "+ userId );
-		List<Reservation> ReservationList = reservationService.SelectListMemberById(userId);
-		session.setAttribute("ReservationList", ReservationList);
-		System.out.println("UserList : "+ ReservationList);
-
-		return "reservationList";
+	//예약 찾기 메서드.
+	@RequestMapping(value = "/r", method = RequestMethod.GET)
+	public String reservation(HttpSession session, Model model) {
+		String confirmation_payment = reservationService.PayCheck((String) session.getAttribute("m_id"));
+		model.addAttribute("confirmation_payment", confirmation_payment);
+		return "/reservation/reservation";
 	}
-
-	@PostMapping("/insert")
-	@ResponseBody
-	public int ReservationInsert(Model m, Reservation reservation) {
-
-		String reservationDate = reservation.getReservationDate();
-		String reservationName = reservation.getReservationName();
-		System.out.println(reservation);
-		System.out.println("입력받은 값 : " + reservationDate +","+ reservationName);
-
-		int num = 0;
-
-		num = reservationService.DateChecking(reservationDate, reservationName);	
-
-		System.out.println("num :"+ num);
-
-		if (num == 0) {
-			String userId = reservation.getUserId();
-			System.out.println("userId: " + userId);
-
-			reservationService.InsertMemberReservation(reservation);
-			System.out.println("예약완료!");
-
-		} else if (num == 1) {
-
-			System.out.println("예약이 이미 되어 있습니다.");
-
-		} else {
-
-			System.out.println("예약 날짜의 예약 가능합니다.");
+	
+	@RequestMapping(value = "/reservation1", method = RequestMethod.POST)
+	public String reservation(Reservation reservation, HttpSession session, Model model) throws ParseException {
+		reservation.setUserId((String) session.getAttribute("userId"));
+		int duplicateFind = reservationService.DuplicateFind(reservation);
+		if (duplicateFind >= 1) {
+			model.addAttribute("duplicateFind", duplicateFind);
+			return "/reservation/ReservationCheck";
 		}
+		String id = (UUID.randomUUID().toString());
+		reservation.setId(id);
+		
+		System.out.println("reservation : " + reservation);
+		
+		reservationService.reservation_number(reservation);
+		int RoomPrice = reservationService.RoomPrice(reservation);
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd"); 
+		Date beginDate = formatter.parse(reservation.getReservationDateIn()); 
+		Date endDate = formatter.parse(reservation.getReservationDateOut()); 
+		long diff = endDate.getTime() - beginDate.getTime(); 
 
-		return num;
+		long diffDays = diff / (24 * 60 * 60 * 1000) + 1;
+
+		int price = RoomPrice * (int) diffDays;
+		reservation.setPrice(price);
+		reservationService.reservationInsert(reservation);
+		model.addAttribute("model", reservation);
+		return "/reservation/ReservationCheck";
+	}
+	
+	@RequestMapping(value = "/ReservationPay", method = RequestMethod.GET)
+	public String ReservationPay(@RequestParam("id") String id) {
+		reservationService.PayCheckUpdate(id);
+		return "/index";
 	}
 
-	@GetMapping("/updateForm")
-	public String updateForm(int id, Model m) {
-		Reservation reservation = reservationService.selectById(id);
-		m.addAttribute("reservation", reservation);
-		return "reservationUpdate";
+	@RequestMapping(value = "/ReservationSelect", method = RequestMethod.GET)
+	public String ReservationSelect(HttpSession session, Reservation reservation, Model model) {
+		String confirmation_payment = reservationService.PayCheck((String) session.getAttribute("userId"));
+		reservation = reservationService.ReservationSelect((String) session.getAttribute("userId"));
+		model.addAttribute("confirmationPayment", confirmation_payment);
+		model.addAttribute("model", reservation);
+		return "/reservation/ReservationSelect";
+
 	}
 
-
-	@PostMapping("/update")
-	public String ReservationUpdate(Reservation reservation) {
-
-		System.out.println("입력받은 값 : " + reservation);
-
-		String userId = reservation.getUserId();
-		System.out.println("Cont userId: " + userId );
-
-		reservationService.UpdateMember(reservation);
-		System.out.println("예약 수정완료!");
-
-		return "redirect:list";
+	@RequestMapping(value = "/ReservationCancel", method = RequestMethod.POST)
+	public String ReservationCancel() {
+		reservationService.ReservationDelete();
+		return "/index";
 	}
 
-	@GetMapping("/delete")
-	public String RsDelete(int id) {
-		reservationService.DeleteMember(id);
-		return "redirect:list";
+	@ResponseBody
+	@RequestMapping(value = "/ReservationPasswordCheck", method = RequestMethod.POST)
+	public boolean PasswordCheck(@RequestParam("userId") String userId, @RequestParam("password") String password) {
+		String SearchPW = reservationService.SearchPW(userId);
+		if (SearchPW.equals(password)) {
+			reservationService.ReservationDelete();
+			
+			return true;
+		} else
+			return false;
 	}
 }	

@@ -2,155 +2,139 @@ package hotel.model;
 
 public class Pagination {
 
-	private int listSize = 10;                //초기값으로 목록개수를 10으로 셋팅
-	private int rangeSize = 10;            //초기값으로 페이지범위를 10으로 셋팅
-	private int page;
-	private int range;
-	private int listCnt;
-	private int pageCnt;
-	private int startPage;
-	private int startList;
-	private int endPage;
-	private boolean prev;
-	private boolean next;
+	public static final int PAGE_SCALE = 5;
+	public static final int BLOCK_SCALE = 6;
+	private int curPage;
+	private int prevPage;
+	private int nextPage;
+	private int totPage; 
+	private int totBlock; 
+	private int curBlock;  
+	private int prevBlock;
+	private int nextBlock;
+	private int pageBegin;
+	private int pageEnd;
+	private int blockBegin;
+	private int blockEnd;
 
-	public int getRangeSize() {
-
-		return rangeSize;
+	public Pagination(int count, int curPage){
+		curBlock = 1; 
+		this.curPage = curPage;
+		setTotPage(count);
+		setPageRange();  
+		setTotBlock(); 
+		setBlockRange();
 	}
 
-	public int getPage() {
+	public void setBlockRange(){
+		curBlock = (int)Math.ceil( (curPage-1) / BLOCK_SCALE)+1;
 
-		return page;
+		blockBegin = (curBlock-1)*BLOCK_SCALE+1;
+ 	
+		blockEnd = blockBegin+BLOCK_SCALE-1;
+		
+		if(blockEnd > totPage) blockEnd = totPage;
+		
+		prevPage = (curPage == 1)? 1:(curBlock-1)*BLOCK_SCALE;
+		
+		nextPage = curBlock > totBlock ? (curBlock*BLOCK_SCALE) : (curBlock*BLOCK_SCALE)+1;
+		
+		if(nextPage >= totPage) nextPage = totPage;
 	}
 
-	public void setPage(int page) {
-
-		this.page = page;
+	public  int getPageScale() { 
+		return PAGE_SCALE;
 	}
 
-	public int getRange() {
+	public void setPageRange(){
 
-		return range;
+		pageBegin = (curPage-1)*PAGE_SCALE+1;
+
+		pageEnd = pageBegin+PAGE_SCALE-1;
 	}
 
-	public void setRange(int range) {
-
-		this.range = range;
+	// Getter/Setter
+	public int getCurPage() {
+		return curPage;
+	}
+	public void setCurPage(int curPage) {
+		this.curPage = curPage;
+	}
+	public int getPrevPage() {
+		return prevPage;
+	}
+	public void setPrevPage(int prevPage) {
+		this.prevPage = prevPage;
+	}
+	public int getNextPage() {
+		return nextPage;
+	}
+	public void setNextPage(int nextPage) {
+		this.nextPage = nextPage;
+	}
+	public int getTotPage() {
+		return totPage;
+	}
+	public void setTotPage(int count) { //10
+		totPage = (int) Math.ceil(count*1.0 / PAGE_SCALE);
+	}
+	public int getTotBlock() {
+		return totBlock;
 	}
 
-	public int getStartPage() {
-
-		return startPage;
-	}
-	
-	public void setStartPage(int startPage) {
-
-		this.startPage = startPage;
+	public void setTotBlock() {
+		totBlock = (int)Math.ceil(totPage / BLOCK_SCALE);
 	}
 
-	public int getEndPage() {
-
-		return endPage;
+	public int getCurBlock() {
+		return curBlock;
 	}
-
-	public void setEndPage(int endPage) {
-
-		this.endPage = endPage;
+	public void setCurBlock(int curBlock) {
+		this.curBlock = curBlock;
 	}
-
-	public boolean isPrev() {
-
-		return prev;
+	public int getPrevBlock() {
+		return prevBlock;
 	}
-
-	public void setPrev(boolean prev) {
-
-		this.prev = prev;
+	public void setPrevBlock(int prevBlock) {
+		this.prevBlock = prevBlock;
 	}
-
-	public boolean isNext() {
-
-		return next;
+	public int getNextBlock() {
+		return nextBlock;
 	}
-
-	public void setNext(boolean next) {
-
-		this.next = next;
+	public void setNextBlock(int nextBlock) {
+		this.nextBlock = nextBlock;
 	}
-
-	public int getListSize() {
-
-		return listSize;
-
+	public int getPageBegin() {
+		return pageBegin;
 	}
-
-	public void setListSize(int listSize) {
-
-		this.listSize = listSize;
+	public void setPageBegin(int pageBegin) {
+		this.pageBegin = pageBegin;
 	}
-
-	public int getListCnt() {
-
-		return listCnt;
+	public int getPageEnd() {
+		return pageEnd;
 	}
-
-	public void setListCnt(int listCnt) {
-
-		this.listCnt = listCnt;
+	public void setPageEnd(int pageEnd) {
+		this.pageEnd = pageEnd;
 	}
-
-	public int getStartList() {
-
-		return startList;
+	public int getBlockBegin() {
+		return blockBegin;
 	}
-
-	public void pageInfo(int page, int range, int listCnt) {
-
-		this.page = page;
-		this.range = range;
-		this.listCnt = listCnt;
-
-		//전체 페이지수 
-
-		this.pageCnt = (int) Math.ceil(listCnt/listSize);
-
-		//시작 페이지
-
-		this.startPage = (range - 1) * rangeSize + 1 ;
-
-		//끝 페이지
-
-		this.endPage = range * rangeSize;
-
-		//게시판 시작번호
-
-		this.startList = (page - 1) * listSize;
-
-		//이전 버튼 상태
-
-		this.prev = range == 1 ? false : true;
-
-		//다음 버튼 상태
-
-		this.next = endPage > pageCnt ? false : true;
-
-		if (this.endPage > this.pageCnt) {
-
-			this.endPage = this.pageCnt;
-
-			this.next = false;
-		}
+	public void setBlockBegin(int blockBegin) {
+		this.blockBegin = blockBegin;
+	}
+	public int getBlockEnd() {
+		return blockEnd;
+	}
+	public void setBlockEnd(int blockEnd) {
+		this.blockEnd = blockEnd;
 	}
 
 	@Override
 	public String toString() {
-		return "Pagination [listSize=" + listSize + ", rangeSize=" + rangeSize + ", page=" + page + ", range=" + range
-				+ ", listCnt=" + listCnt + ", pageCnt=" + pageCnt + ", startPage=" + startPage + ", startList="
-				+ startList + ", endPage=" + endPage + ", prev=" + prev + ", next=" + next + "]";
+		return "Pagination2 [curPage=" + curPage + ", prevPage=" + prevPage + ", nextPage=" + nextPage + ", totPage="
+				+ totPage + ", totBlock=" + totBlock + ", curBlock=" + curBlock + ", prevBlock=" + prevBlock
+
+				+ ", nextBlock=" + nextBlock + ", pageBegin=" + pageBegin + ", pageEnd=" + pageEnd + ", blockBegin="
+				+ blockBegin + ", blockEnd=" + blockEnd + "]";
 	}
 }
-
-
-
-

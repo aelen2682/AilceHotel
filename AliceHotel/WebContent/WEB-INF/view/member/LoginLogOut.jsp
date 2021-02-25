@@ -48,13 +48,13 @@
     function Check() {
     	   $.ajax({
 			    type:'POST',
-			    url:'${pageContext.request.contextPath}/member/login',
+			    url:'${pageContext.request.contextPath}/member/Login',
 			    data:  {
 			    	"userId" : $("#user_id").val(),
 			    	"password" : $("#password").val()
 			    },
 			    success: function(result){
-		                if(result == 1)  {
+		                if(result != 1)  {
 		                $("#aaa").html('가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.');
 		                    }
 			    else {
@@ -73,7 +73,7 @@
 				<div class="login100-form-title"
 					style="background-image: url(<c:url value='/resources/images/bg-01.jpg'/>);">
 					<!-- 					<span class="login100-form-title-1">호텔델루나</span> -->
-					<span class="login100-form-title-1">Hotel Delluna</span>
+					<span class="login100-form-title-1">Ailce Hotel</span>
 				</div>
 
 				<%-- <form class="login100-form validate-form" action="<c:url value='/member/memLogin'/>" method="post" >  --%>

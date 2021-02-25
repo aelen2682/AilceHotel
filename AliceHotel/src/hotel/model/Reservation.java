@@ -2,50 +2,38 @@ package hotel.model;
 
 public class Reservation {
 
-	private int id;
-	private String reservationName;
-	private String reservationDate;
+	private String id;
 	private String userId;
-	private String name;
-	private String phone;
+	private String reservationDateIn;
+	private String reservationDateOut;
+	private String roomType;
+	private boolean confirmationPayment;
+	private int adult;
+	private int child;
 	private int price;
 	
 	public Reservation() {}
 
-	public Reservation(int id, String reservationName, String reservationDate, String userId, String name, String phone,
-			int price) {
+	public Reservation(String id, String userId, String reservationDateIn, String reservationDateOut, String roomType,
+			boolean confirmationPayment, int adult, int child, int price) {
 		super();
 		this.id = id;
-		this.reservationName = reservationName;
-		this.reservationDate = reservationDate;
 		this.userId = userId;
-		this.name = name;
-		this.phone = phone;
+		this.reservationDateIn = reservationDateIn;
+		this.reservationDateOut = reservationDateOut;
+		this.roomType = roomType;
+		this.confirmationPayment = confirmationPayment;
+		this.adult = adult;
+		this.child = child;
 		this.price = price;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getReservationName() {
-		return reservationName;
-	}
-
-	public void setReservationName(String reservationName) {
-		this.reservationName = reservationName;
-	}
-
-	public String getReservationDate() {
-		return reservationDate;
-	}
-
-	public void setReservationDate(String reservationDate) {
-		this.reservationDate = reservationDate;
 	}
 
 	public String getUserId() {
@@ -56,20 +44,52 @@ public class Reservation {
 		this.userId = userId;
 	}
 
-	public String getName() {
-		return name;
+	public String getReservationDateIn() {
+		return reservationDateIn;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setReservationDateIn(String reservationDateIn) {
+		this.reservationDateIn = reservationDateIn;
 	}
 
-	public String getPhone() {
-		return phone;
+	public String getReservationDateOut() {
+		return reservationDateOut;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setReservationDateOut(String reservationDateOut) {
+		this.reservationDateOut = reservationDateOut;
+	}
+
+	public String getRoomType() {
+		return roomType;
+	}
+
+	public void setRoomType(String roomType) {
+		this.roomType = roomType;
+	}
+
+	public boolean isConfirmationPayment() {
+		return confirmationPayment;
+	}
+
+	public void setConfirmationPayment(boolean confirmationPayment) {
+		this.confirmationPayment = confirmationPayment;
+	}
+
+	public int getAdult() {
+		return adult;
+	}
+
+	public void setAdult(int adult) {
+		this.adult = adult;
+	}
+
+	public int getChild() {
+		return child;
+	}
+
+	public void setChild(int child) {
+		this.child = child;
 	}
 
 	public int getPrice() {
@@ -82,7 +102,8 @@ public class Reservation {
 
 	@Override
 	public String toString() {
-		return "Reservation [id=" + id + ", reservationName=" + reservationName + ", reservationDate=" + reservationDate
-				+ ", userId=" + userId + ", name=" + name + ", phone=" + phone + ", price=" + price + "]";
+		return "Reservation [id=" + id + ", userId=" + userId + ", reservationDateIn=" + reservationDateIn
+				+ ", reservationDateOut=" + reservationDateOut + ", roomType=" + roomType + ", confirmationPayment="
+				+ confirmationPayment + ", adult=" + adult + ", child=" + child + ", price=" + price + "]";
 	}
 }

@@ -2,6 +2,7 @@ package hotel.controller;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpSession;
 
@@ -9,8 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import hotel.model.Member;
@@ -32,25 +34,19 @@ public class MemberController {
 	public String MemberInsert() {
 		return "/member/MemberInsert";
 	}
-	//회원가입 폼으로 이동.
-	@GetMapping("/joinForm")
-	public String getPage_User() {
-		return "page_User";
-	}
 
 	//회원가입
-	@PostMapping("/join")
-	public String insertPage_User(Member member) {
+	@RequestMapping(value = "/family", method = RequestMethod.POST)
+	public String MemberFamily(Member member) {
 
-		System.out.println("user: "+ member);
 		memberService.InsertMember(member);
 
 		System.out.println("가입된 user : " +member);
 		return "/member/JoinSuccess";
 	}
 
-	@PostMapping("/login")
 	@ResponseBody
+	@RequestMapping(value = "/Login", method = RequestMethod.POST)
 	public int loginCheck(Member member, HttpSession session) {//, HttpSession session
 
 		String userId = member.getUserId();
@@ -75,10 +71,6 @@ public class MemberController {
 			System.out.println("로그인 ID : " + User);
 			System.out.println("로그인 성공!");
 			session.setAttribute("userId", User.getUserId());
-			session.setAttribute("password", User.getPassword());
-			session.setAttribute("name", User.getName());
-			session.setAttribute("phone", User.getPhone());
-			session.setAttribute("manager", User.getManager());
 		} else {
 
 			System.out.println("비밀번호가 일치하지 않습니다.");
@@ -88,22 +80,26 @@ public class MemberController {
 		
 	}
 
-	@RequestMapping("/idcheck")
+	private static final Pattern ID_REGEX = Pattern.compile("^[a-zA-Z]{1}[a-zA-Z0-9_]{4,11}$");
+
 	@ResponseBody
-	public Map<Object, Object> idcheck(@RequestBody String userId) {
-		
-		System.out.println(userId);
-		int count = 0;
-
-		Map<Object, Object> map = new HashMap<Object, Object>();
-		
-		count = memberService.SelectCountById(userId);
-
-		if (count == 0) {
+	@RequestMapping(value = "/idcheck", method = RequestMethod.POST)
+	public int idcheck(@RequestParam("userId") String userId) {
+		Member Check = memberService.SelectMemberById(userId);
+		if (Check == null) {
+			if (ID_REGEX.matcher(userId).matches()) {
+				return 1;
+			} else {
+				return -1;
+			}
+		} else {
+			return 0;
 		}
-		
-		map.put("cnt", count);
-
-		return map;
+	}
+	
+	@RequestMapping(value = "/Logout", method = RequestMethod.GET)
+	public String Logout(HttpSession session) {
+		session.invalidate();
+		return "/index";
 	}
 }
