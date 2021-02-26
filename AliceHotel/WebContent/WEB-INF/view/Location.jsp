@@ -308,33 +308,34 @@
 </div>
 	</div>
 
-        <!-- Footer
+       <!-- Footer
         ============================================= -->
-        <footer id="footer" class="footer">
-        
-            <div class="container">
+			<footer id="footer" class="footer">
 
-                <!-- Footer Widgets
+				<div class="container">
+
+					<!-- Footer Widgets
                 ============================================= -->
-                <div class="footer-widgets-wrap clearfix">
+					<div class="footer-widgets-wrap clearfix">
 
-                    <div class="col_two_third">
+						<div class="col_two_third">
 
-                        <div class="widget clearfix">
+							<div class="widget clearfix" style="padding-left: 84px;">
 
-                            <h3>(주)엘리스 호텔 <span>02-1544-1111</span></h3>
-                            <p>63535, 제주특별자치도 서귀포시 중문관광로 72번길, 엘리스 호텔</p>
+								<h3>
+									(주)엘리스 호텔 <span>02-1544-1111</span>
+								</h3>
+								<p>63535, 제주특별자치도 서귀포시 중문관광로 72번길, 엘리스 호텔</p>
 
-                            <div class="line" style="margin: 30px 0;"></div>
-
-                            <div class="col_half">
-                                <div class="widget subscribe-widget clearfix">
-                                    <h5>Email : AilceHotel@AilceHotel.co.kr
-                                    <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
-                                    <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
-  								
-                                    </form>
-                                    <script type="text/javascript">
+								<div class="widget subscribe-widget clearfix">
+									<h5>
+										Email : AilceHotel@AilceHotel.co.kr
+										<div id="widget-subscribe-form-result"
+											data-notify-type="success" data-notify-msg=""></div>
+										<form id="widget-subscribe-form"
+											action="include/subscribe.php" role="form" method="post"
+											class="nobottommargin"></form>
+										<script type="text/javascript">
                                         $("#widget-subscribe-form").validate({
                                             submitHandler: function(form) {
                                                 $(form).find('.input-group-addon').find('.icon-email2').removeClass('icon-email2').addClass('icon-line-loader icon-spin');
@@ -350,130 +351,136 @@
                                             }
                                         });
                                     </script>
-                                </div>                            
-                            </div>
+								</div>
+								<div class="col_half col_last">
+									<div class="widget clearfix" style="top: 10px;">
 
-                            <div class="col_half col_last">
-                                <div class="widget clearfix">
+										<div class="hidden-xs hidden-sm">
+											<div class="clear" style="padding-top: 10px;"></div>
+										</div>
 
-                                    <div class="hidden-xs hidden-sm"><div class="clear" style="padding-top: 10px;"></div></div>
+										<div class="col-md-6 bottommargin-sm">
 
-                                    <div class="col-md-6 bottommargin-sm">
+											<div class="widget_links clearfix">
+												<ul>
+													<li><a href="<c:url value='/'/>"><div>메인</div></a></li>
+													<li><a href="<c:url value='/notice/NoticeList'/>"><div>공지사항</div></a></li>
+													<li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a></li>
+													<li><a href="<c:url value="/Location"/>"><div>호텔위치</div></a></li>
+													<li><a href="<c:url value="/contact-1"/>"><div>고객의
+																소리</div></a></li>
+												</ul>
+											</div>
+										</div>
 
-                            			<div class="widget_links clearfix">
-                                			<ul>
-                                    			<li><a href="<c:url value='/'/>"><div>메인</div></a></li>
-                                    		<li><a href="<c:url value='/notice/NoticeList'/>"><div>공지사항</div></a></li>
-                                    		<li><a href="<c:url value="/hotel-About-Us"/>"><div>호텔소개</div></a></li>
-                                    		<li><a href="<c:url value="/Location"/>"><div>호텔위치</div></a></li>
-                                            <li><a href="<c:url value="/contact-1"/>"><div>고객의 소리</div></a></li>
-                                			</ul>
-                            			</div>
-                                    </div>
+										<div class="col-md-6 bottommargin-sm col_last">
 
-                                    <div class="col-md-6 bottommargin-sm col_last">
+											<div class="widget_links clearfix">
+												<ul>
+													<li><a href="<c:url value="/deluxe-1"/>"><div>객실
+																- 디럭스</div></a></li>
+													<li><a href="<c:url value="/suite-1"/>"><div>객실
+																- 스위트</div></a></li>
+													<li><a href="<c:url value="/dining-1"/>"><div>다이닝</div></a></li>
+													<li><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>
+													<li><a
+														href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회
+																및 취소</div></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                            			<div class="widget_links clearfix">
-                                			<ul>
-                                    			<li><a href="<c:url value="/deluxe-1"/>"><div>객실 - 디럭스</div></a></li>
-                                    			<li><a href="<c:url value="/suite-1"/>"><div>객실 - 스위트</div></a></li>
-                                    			<li><a href="<c:url value="/dining-1"/>"><div>다이닝</div></a></li>
-                                    			<li><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>
-                                                <li><a href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회 및 취소</div></a></li>
-                                			</ul>
-                            			</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+						<div class="col_one_third col_last">
 
-                    <div class="col_one_third col_last">
+							<div class="widget clearfix">
+								<div class="fancy-title title-border">
+									<h4>Hours</h4>
+								</div>
+								<ul class="nobottommargin nobullets">
+									<li><strong>호텔서비스</strong><br>00:00 ~ 24:00</li>
+									<br>
+									<li><strong>객실예약(주중)</strong><br>09:00 ~ 18:00</li>
+									<br>
+									<li>업무시간 외에는<br> 온라인 예약을 이용해주시기 바랍니다.
+									</li>
+								</ul>
+							</div>
 
-                        <div class="widget clearfix">
-                        <div class="fancy-title title-border">
-                            <h4>Hours</h4>
-                        </div>
-                        <ul class="nobottommargin nobullets">
-                            <li><strong>호텔서비스</strong><br>00:00 ~ 24:00</li><br>
-                            <li><strong>객실예약(주중)</strong><br>09:00 ~ 18:00</li><br>
-                            <li>업무시간 외에는<br> 온라인 예약을 이용해주시기 바랍니다.</li>
-                        </ul>
-                        </div>
-                        
-                        <div class="widget clearfix">
-                        <div class="fancy-title title-border">
-                            <h4>Address</h4>
-                        </div>
+							<div class="widget clearfix">
+								<div class="fancy-title title-border">
+									<h4>Address</h4>
+								</div>
 
-                        <ul class="nobottommargin nobullets">
-                            <li>63535, 제주특별자치도 </li>
-                            <li>서귀포시 중문관광로 72번길, 엘리스 호텔</li>
-                        </ul>
-                        </div>                                                
-                    </div>
-                </div>
-              <!-- .footer-widgets-wrap end -->
+								<ul class="nobottommargin nobullets">
+									<li>63535, 제주특별자치도</li>
+									<li>서귀포시 중문관광로 72번길, 엘리스 호텔</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- .footer-widgets-wrap end -->
 
-            </div>       
+				</div>
 
-             <!-- Copyrights
+				<!-- Copyrights
             ============================================= -->
-          <div id="copyrights">
+				<div id="copyrights">
+					<div class="container clearfix">
 
-                <div class="container clearfix">
+						<div class="col_half">
+							 <img
+								src="<c:url value='/resources/images/logo/footer-logo-large.png' />"
+								alt="" class="footer-logo retina-logo"> Copyright &copy;
+							2021 Ailce Hotel . All Rights Reserved.
+						</div>
 
-                    <div class="col_half">
-                        <img src="<c:url value='/resources/images/logo/footer-logo.png'/>" alt="" class="footer-logo standard-logo">
-                        <img src="<c:url value='/resources/images/logo/footer-logo-large.png' />" alt="" class="footer-logo retina-logo">
-                        Copyright &copy; 2021 Ailce Hotel. All Rights Reserved.
-                    </div>
+						<div class="col_half col_last tright">
+							<div class="copyrights-menu copyright-links fright clearfix">
+								<a href="<c:url value='/notice/NoticeList'/>">공지사항</a> <a
+									href="<c:url value="/hotel-About-Us"/>">호텔소개</a> <a
+									href="<c:url value="/deluxe-1"/>">객실</a> <a
+									href="<c:url value='/reservation/ReservationSelect'/>">예약조회
+									및 취소</a> <a href="<c:url value="/contact-1"/>">고객의 소리</a>
+							</div>
+							<div class="fright clearfix">
+								<a href="https://www.facebook.com/"
+									class="social-icon si-small si-borderless nobottommargin si-facebook">
+									<i class="icon-facebook"></i> <i class="icon-facebook"></i>
+								</a> <a href="https://twitter.com/explore"
+									class="social-icon si-small si-borderless nobottommargin si-twitter">
+									<i class="icon-twitter"></i> <i class="icon-twitter"></i>
+								</a> <a href="https://github.com/park002"
+									class="social-icon si-small si-borderless nobottommargin si-github">
+									<i class="icon-github"></i> <i class="icon-github"></i>
+								</a> <a href="https://www.yahoo.com/"
+									class="social-icon si-small si-borderless nobottommargin si-yahoo">
+									<i class="icon-yahoo"></i> <i class="icon-yahoo"></i>
+								</a>
+							</div>
+						</div>
 
-                    <div class="col_half col_last tright">
-                        <div class="copyrights-menu copyright-links fright clearfix">
-                            <a href="<c:url value='/notice/NoticeList'/>">공지사항</a>
-                             <a href="<c:url value="/hotel-About-Us"/>">호텔소개</a>
-                              <a href="<c:url value="/deluxe-1"/>">객실</a>
-                               <a href="<c:url value='/reservation/ReservationSelect'/>">예약조회 및 취소</a>
-                                <a href="<c:url value="/contact-1"/>">고객의 소리</a>
-                        </div>
-                        <div class="fright clearfix">
-                             <a href="https://www.facebook.com/" class="social-icon si-small si-borderless nobottommargin si-facebook">
-                                <i class="icon-facebook"></i>
-                                <i class="icon-facebook"></i>
-                            </a>
+					</div>
 
-                            <a href="https://twitter.com/explore" class="social-icon si-small si-borderless nobottommargin si-twitter">
-                                <i class="icon-twitter"></i>
-                                <i class="icon-twitter"></i>
-                            </a>
-                            <a href="https://github.com/park002" class="social-icon si-small si-borderless nobottommargin si-github">
-                                <i class="icon-github"></i>
-                                <i class="icon-github"></i>
-                            </a>
+				</div>
+				<!-- #copyrights end -->
 
-                            <a href="https://www.yahoo.com/" class="social-icon si-small si-borderless nobottommargin si-yahoo">
-                                <i class="icon-yahoo"></i>
-                                <i class="icon-yahoo"></i>
-                            </a>
-                        </div>
-                    </div>
+			</footer>
+			<!-- #footer end -->
 
-                </div>
+		</div>
+		<!-- #wrapper end -->
 
-            </div><!-- #copyrights end -->
-
-        </footer><!-- #footer end -->
-
-    </div><!-- #wrapper end -->
-
-    <!-- Go To Top
+		<!-- Go To Top
     ============================================= -->
-    <div id="gotoTop" class="icon-angle-up"></div>
+		<div id="gotoTop" class="icon-angle-up"></div>
 
-    <!-- Footer Scripts
+		<!-- Footer Scripts
     ============================================= -->
-        <script type="text/javascript" src="<c:url value='/resources/js/functions.js'/>"></script>
-
+		<script type="text/javascript"
+			src="<c:url value='/resources/js/functions.js'/>"></script>
 </body>
 </html>
