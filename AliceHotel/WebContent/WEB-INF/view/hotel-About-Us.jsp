@@ -33,7 +33,7 @@
 
     <!-- Document Title
     ============================================= -->
-	<title> Hotel Delluna </title>
+	<title> Ailce Hotel </title>
 	<!-- google-font  
 	====================================================
 	 -->
@@ -147,10 +147,10 @@
         ============================================= -->
         <section id="page-title" class="page-title-parallax" style="background-image: url('<c:url value="resources/images/hotel-about/main.jpg"/>'); padding: 120px 0;" data-stellar-background-ratio="0.3">
             <div class="container clearfix">
-                <h1>호텔 델루나 소개</h1>
+                <h1>엘리스 호텔 소개</h1>
                 <ol class="breadcrumb">
                     <li><a href="<c:url value="/"/>">홈</a></li>
-                    <li class="active">호텔 델루나 소개</li>
+                    <li class="active">엘리스 호텔 소개</li>
                 </ol>
             </div>
 
@@ -175,12 +175,12 @@
                             <div class="entry clearfix">
                              
                                 <div class="entry-title">
-                                    <h2><a href="<c:url value="/"/>">호텔 델루나</a></h2>
+                                    <h2><a href="<c:url value="/"/>">엘리스 호텔</a></h2>
                                 </div>
                                 
                                 <div class="entry-content">
                           
-                                    <p>환상의 섬 제주도 중문단지에 위치한 호텔 델루나는 500개의 객실을 갖춘 한국 최고의 리조트 호텔입니다.
+                                    <p>환상의 섬 제주도 중문단지에 위치한 엘리스 호텔은 500개의 객실을 갖춘 한국 최고의 리조트 호텔입니다.
                                     <br>남아프리카의 리조트 호텔 ‘The Palace of the Lost City’를 모델로 설계되어 천혜의 제주 자연과 어우러진 이국적인 분위기를 느낄 수 있습니다.
                                     <br>8개의 레스토랑 및 라운지, 7개의 연회장을 구비해 대규모 국제행사와 세미나에 최적일 뿐만 아니라 4계절 온수풀, 헬로키티 캐릭터 룸 등 다양한 시설을 갖춰 가족과 연인들에게 사랑 받는 호텔입니다.</p>
                                     
@@ -201,7 +201,7 @@
                                 	<a href="<c:url value="/dining-1"/>">
                                     <img class="image_fade img-rounded img-responsive" src="<c:url value="/resources/images/hotel-about/dining.jpg"/>" alt="Standard Post with Image"></a>
                                     <B>다이닝</B><br>
-                                     	<strong>호텔 델루나는 바다 위로 반짝이는 석양을 바라보며 즐기는 테라스 만찬, 한식부터 일식, 중식, 양식까지 호텔 셰프들이 직접 엄선한 최상의 식재료를 비롯하여 프리미엄 와인을 경험할 수 있는 레스토랑과 라운지를 갖추고 있습니다.</strong><br>
+                                     	<strong>엘리스 호텔은 바다 위로 반짝이는 석양을 바라보며 즐기는 테라스 만찬, 한식부터 일식, 중식, 양식까지 호텔 셰프들이 직접 엄선한 최상의 식재료를 비롯하여 프리미엄 와인을 경험할 수 있는 레스토랑과 라운지를 갖추고 있습니다.</strong><br>
 										- 세계 각국의 다양한 요리를 즐길 수 있는 야외 뷔페<br>				
                                		 </div>
                                  </div>
@@ -212,7 +212,7 @@
                                 	<a href="<c:url value="/menu-item2"/>">
                                     <img class="image_fade img-rounded img-responsive" src="<c:url value="resources/images/hotel-about/meetings&banquets.jpg"/>" alt="Standard Post with Image"></a>
                                     <B>미팅&웨딩</B><br>
-                                     	<strong>호텔 델루나는 대규모 국제 행사와 세미나, 컨퍼런스, 가족연회, 음악회, 각종 공연 등이 가능한 실내 외 연회장을 갖추고 있습니다.</strong><br>
+                                     	<strong>엘리스 호텔은 대규모 국제 행사와 세미나, 컨퍼런스, 가족연회, 음악회, 각종 공연 등이 가능한 실내 외 연회장을 갖추고 있습니다.</strong><br>
 										- 중문관광단지에서 가장 큰 규모의 연회장인 크리스탈 볼룸<br>
 										- 야외 리셉션 장소 구비<br>
 										- 첨단시설이 구비된 현대적인 비즈니스 회의실<br>
@@ -222,7 +222,7 @@
                                 	<a href="<c:url value="/menu-item"/>">
                                     <img class="image_fade img-rounded img-responsive" src="<c:url value="/resources/images/hotel-about/facilities.jpg"/>" alt="Standard Post with Image"></a>
                                     <B>부대시설</B><br>
-                                     	<strong>호텔 델루나는 제주의 자연과 더불어 최상의 휴식을 즐길 수 있는 다양한 공간과 아이들을 위한 특별한 즐거움이 마련되어 있습니다.</strong><br>
+                                     	<strong>엘리스 호텔은 제주의 자연과 더불어 최상의 휴식을 즐길 수 있는 다양한 공간과 아이들을 위한 특별한 즐거움이 마련되어 있습니다.</strong><br>
 										- 로맨틱하고 환상적인 분위기의 사계절 럭셔리 야외 스파 & 가든 해온(he:on)<br>
 										- 가족단위 여행객을 위한 어린이 멀티 체험 놀이공간, 키즈월드<br>
                                	  </div>
@@ -248,14 +248,14 @@
 
                         <div class="widget clearfix">
 
-                            <h3>(주)호텔 델루나 <span>02-1544-1111</span></h3>
-                            <p>63535, 제주특별자치도 서귀포시 중문관광로 72번길, 호텔 델루나.</p>
+                            <h3>(주)엘리스 호텔 <span>02-1544-1111</span></h3>
+                            <p>63535, 제주특별자치도 서귀포시 중문관광로 72번길, 엘리스 호텔</p>
 
                             <div class="line" style="margin: 30px 0;"></div>
 
                             <div class="col_half">
                                 <div class="widget subscribe-widget clearfix">
-                                    <h5>Email : hoteldelluna@hoteldelluna.co.kr
+                                    <h5>Email : AilceHotel@AilceHotel.co.kr
                                     <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
                                     <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
   								
@@ -333,7 +333,7 @@
 
                         <ul class="nobottommargin nobullets">
                             <li>63535, 제주특별자치도 </li>
-                            <li>서귀포시 중문관광로 72번길, 호텔 델루나.</li>
+                            <li>서귀포시 중문관광로 72번길, 엘리스 호텔</li>
                         </ul>
                         </div>                                                
                     </div>
@@ -351,7 +351,7 @@
                     <div class="col_half">
                         <img src="<c:url value='/resources/images/logo/footer-logo.png'/>" alt="" class="footer-logo standard-logo">
                         <img src="<c:url value='/resources/images/logo/footer-logo-large.png' />" alt="" class="footer-logo retina-logo">
-                        Copyright &copy; 2020 Hotel Delluna. All Rights Reserved.
+                        Copyright &copy; 2021 Ailce Hotel . All Rights Reserved.
                     </div>
 
                     <div class="col_half col_last tright">

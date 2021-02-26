@@ -33,7 +33,7 @@
 
     <!-- Document Title
     ============================================= -->
-	<title>Hotel Delluna  | Notice</title>
+	<title>Ailce Hotel  | Notice</title>
 
 </head>
 
@@ -104,7 +104,7 @@
                             </li>
                             <li><a href="<c:url value="/contact-1"/>"><div>고객의 소리</div></a></li>
                             <c:choose>
-	                            <c:when test="${m_id ne null}">
+	                            <c:when test="${userId ne null}">
 		                            <li><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>   
 		                            <li><a href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회 및 취소</div></a></li>
 	                            </c:when>
@@ -115,7 +115,7 @@
                             </c:choose>
                             
                                <c:choose>
-                               		<c:when test="${m_id eq null}">         
+                               		<c:when test="${userId eq null}">         
                            		 			<li><a href="<c:url value ='/member/LoginLogOut'/>"><div>로그인</div></a>
                            		 		<ul>
                                 	    	<li><a href="<c:url value ='/member/LoginLogOut'/>"><div>로그인</div></a></li>
@@ -168,7 +168,7 @@
 
                             <div class="col_one_third">
                                 <label for="template-contactform-name">관리자 <small>*</small></label>
-                                <input type="text" id="template-contactform-name" name="b_writer" value="admin" class="sm-form-control required" readonly="readonly"/>
+                                <input type="text" id="template-contactform-name" name="writer" value="admin" class="sm-form-control required" readonly="readonly"/>
                             </div>
 
                       <!--       <div class="col_one_third">
@@ -182,7 +182,7 @@
 
                             <div class="col_two_third">
                                 <label for="template-contactform-subject">제목 <small>*</small></label>
-                                <input type="text" id="template-contactform-subject" name="b_title"  class="required sm-form-control"   maxlength="40" placeholder="제목을 입력해주세요" required="required"/>
+                                <input type="text" id="template-contactform-subject" name="title"  class="required sm-form-control"   maxlength="40" placeholder="제목을 입력해주세요" required="required"/>
                             </div>
 
                             <!-- <div class="col_one_third col_last">
@@ -200,7 +200,7 @@
 
                             <div class="col_full">
                                 <label for="template-contactform-message">작성 <small>*</small></label>
-                                <textarea class="required sm-form-control" id="template-contactform-message" name="b_detail" rows="15" cols="30" placeholder="글을 작성해주세요" required="required" ></textarea>
+                                <textarea class="required sm-form-control" id="template-contactform-message" name="detail" rows="15" cols="30" placeholder="글을 작성해주세요" required="required" ></textarea>
                             </div>
 
                             <!-- <div class="col_full hidden">
@@ -242,7 +242,7 @@
 
                         <address>
                             <strong>Address:</strong><br>
-                           63535, 제주특별자치도 서귀포시 중문관광로 72번길, 호텔 델루나.
+                           63535, 제주특별자치도 서귀포시 중문관광로 72번길, 엘리스 호텔
                         </address>
                         <strong>Phone:</strong> (341) 457 432678<br>
                         <strong>Fax:</strong> (341) 457 538478<br>
@@ -287,14 +287,14 @@
 
                         <div class="widget clearfix">
 
-                            <h3>(주)호텔 델루나 <span>02-1544-1111</span></h3>
-                            <p>63535, 제주특별자치도 서귀포시 중문관광로 72번길, 호텔 델루나.</p>
+                            <h3>(주)엘리스 호텔 <span>02-1544-1111</span></h3>
+                            <p>63535, 제주특별자치도 서귀포시 중문관광로 72번길, 엘리스 호텔</p>
 
                             <div class="line" style="margin: 30px 0;"></div>
 
                             <div class="col_half">
                                 <div class="widget subscribe-widget clearfix">
-                                    <h5>Email : hoteldelluna@hoteldelluna.co.kr
+                                    <h5>Email : AilceHotel@AilceHotel.co.kr
                                     <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
                                     <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
   								
@@ -372,7 +372,7 @@
 
                         <ul class="nobottommargin nobullets">
                             <li>63535, 제주특별자치도 </li>
-                            <li>서귀포시 중문관광로 72번길, 호텔 델루나.</li>
+                            <li>서귀포시 중문관광로 72번길, 엘리스 호텔</li>
                         </ul>
                         </div>                                                
                     </div>
@@ -389,7 +389,7 @@
                     <div class="col_half">
                         <img src="<c:url value='/resources/images/logo/footer-logo.png'/>" alt="" class="footer-logo standard-logo">
                         <img src="<c:url value='/resources/images/logo/footer-logo-large.png' />" alt="" class="footer-logo retina-logo">
-                        Copyright &copy; 2020 Hotel Delluna. All Rights Reserved.
+                        Copyright &copy; 2021 Ailce Hotel. All Rights Reserved.
                     </div>
 
                     <div class="col_half col_last tright">
@@ -402,7 +402,7 @@
                         </div>
                         
                         <div class="fright clearfix">
-                            a href="https://www.facebook.com/" class="social-icon si-small si-borderless nobottommargin si-facebook">
+                            <a href="https://www.facebook.com/" class="social-icon si-small si-borderless nobottommargin si-facebook">
                                 <i class="icon-facebook"></i>
                                 <i class="icon-facebook"></i>
                             </a>

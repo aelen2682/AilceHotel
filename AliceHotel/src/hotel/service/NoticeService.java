@@ -1,6 +1,8 @@
 package hotel.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,4 +45,13 @@ public class NoticeService {
 		public List<Notice> NoticeList(Pagination pagination){
 			return noticeMapper.NoticeList(pagination);
 		}
+
+		public void NoticeCountUpdate(int id) {
+			noticeMapper.NoticeCountUpdate(id);
+		}
+
+		public void NoticeModify(Notice notice) {
+			noticeMapper.Noticeupdate(notice);
+		}
+
 }

@@ -33,7 +33,7 @@
 
     <!-- Document Title
     ============================================= -->
-	<title>Hotel Delluna</title>
+	<title>Ailce Hotel</title>
 
 </head>
 
@@ -237,7 +237,7 @@
 
                         <address>
                             <strong>Address:</strong><br>
-                           63535, 제주특별자치도 서귀포시 중문관광로 72번길, 호텔 델루나.
+                           63535, 제주특별자치도 서귀포시 중문관광로 72번길, 엘리스 호텔.
                         </address>
                         <strong>Phone:</strong> (341) 457 432678<br>
                         <strong>Fax:</strong> (341) 457 538478<br>
@@ -285,14 +285,14 @@
 
                         <div class="widget clearfix">
 
-                            <h3>(주)호텔 델루나 <span>02-1544-1111</span></h3>
-                            <p>63535, 제주특별자치도 서귀포시 중문관광로 72번길, 호텔 델루나.</p>
+                            <h3>(주)엘리스 호텔<span>02-1544-1111</span></h3>
+                            <p>63535, 제주특별자치도 서귀포시 중문관광로 72번길, 엘리스 호텔</p>
 
                             <div class="line" style="margin: 30px 0;"></div>
 
                             <div class="col_half">
                                 <div class="widget subscribe-widget clearfix">
-                                    <h5>Email : hoteldelluna@hoteldelluna.co.kr
+                                    <h5>Email : AilceHotel@AilceHotel.co.kr
                                     <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
                                     <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
   								
@@ -370,7 +370,7 @@
 
                         <ul class="nobottommargin nobullets">
                             <li>63535, 제주특별자치도 </li>
-                            <li>서귀포시 중문관광로 72번길, 호텔 델루나.</li>
+                            <li>서귀포시 중문관광로 72번길, 엘리스 호텔</li>
                         </ul>
                         </div>                                                
                     </div>
@@ -388,7 +388,7 @@
                     <div class="col_half">
                         <img src="images/logo/footer-logo.png" alt="" class="footer-logo standard-logo">
                         <img src="images/logo/footer-logo-large.png" alt="" class="footer-logo retina-logo">
-                        Copyright &copy; 2020 Hotel Delluna. All Rights Reserved.
+                        Copyright &copy; 2021 Ailce Hotel. All Rights Reserved.
                     </div>
 
                     <div class="col_half col_last tright">

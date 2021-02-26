@@ -31,7 +31,7 @@
 	<script src="<c:url value='/resources/js/plugins.js'/>"> </script>
     <!-- Document Title
     ============================================= -->
-	<title>호텔 델루나 위치</title>
+	<title>엘리스 호텔 위치</title>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Pgbl1JjLRBLlmueNAGO5pfMsZzmFJ7U&callback=initMap" 
 	async defer></script> <!--  -->
 	<script>
@@ -41,14 +41,14 @@
 			var X_point = 126.410565;	
 			var zoomLevel = 18; // 지도의 확대 레벨 : 숫자가 클수록 확대정도가 큼
 
-			var markerTitle	= "호텔 델루나"; // 현재 위치 마커에 마우스를 오버을때 나타나는 정보
+			var markerTitle	= "엘리스 호텔"; // 현재 위치 마커에 마우스를 오버을때 나타나는 정보
 			var markerMaxWidth	= 600; // 마커를 클릭했을때 나타나는 말풍선의 최대 크기
 			
 			// 말풍선 내용
 			var contentString	= '<div>' +
 			'<h2>호텔 델루나</h2>'+
-			'<p>환상의 섬 제주도 중문단지에 위치한 호텔 델루나는 <br>500개의 객실을 갖춘 한국 최고의 리조트 호텔입니다.<br />' +
-			'<a href="<c:url value="/"/>" target="_blank">http://www.HotalDelluna.co.kr</a>'
+			'<p>환상의 섬 제주도 중문단지에 위치한 엘리스 호텔은 <br>500개의 객실을 갖춘 한국 최고의 리조트 호텔입니다.<br />' +
+			'<a href="<c:url value="/"/>" target="_blank">http://www.AilceHotel.co.kr</a>'
 			'</div>';
 		
 			var myLatlng = new google.maps.LatLng(Y_point, X_point);
@@ -192,12 +192,12 @@
         <section id="page-title" class="page-title-parallax" style="background-image: url('<c:url value="/resources/images/hotel-about/main.jpg"/>'); padding: 120px 0;" data-stellar-background-ratio="0.3">
 
             <div class="container clearfix" style="border-width:3px;">
-                <h1>호텔 델루나 위치</h1>
+                <h1>엘리스 호텔 위치</h1>
                 
                 <ol class="breadcrumb">
                     <li><a href="<c:url value="/"/>">홈</a></li>
                     <li><a href="<c:url value="/hotel-About-Us"/>">호텔소개</a></li>
-                    <li class="active">호텔 델루나 위치</li>
+                    <li class="active">엘리스 호텔 위치</li>
                 </ol>
             </div>
 
@@ -217,10 +217,10 @@
 		   		<div class="col-md-12">
 			   		<div class="col-md-6" >
 			   		<p>
-			   			<h3 class="text-center">호텔 델루나</h3>
+			   			<h3 class="text-center">엘리스 호텔</h3>
 			   		</div>
 			   			<div class="col-md-6">
-				   			<h6 style="margin-top:20px">제주특별자치도 서귀포시 중문관광로 72번길 35 호텔 델루나</h6>
+				   			<h6 style="margin-top:20px">제주특별자치도 서귀포시 중문관광로 72번길, 엘리스 호텔</h6>
 				   			<div style="font-size:13pt;">
 					   			<strong>TEL</strong>+82-64-731-1000
 					   			<strong>FAX</strong>+82-64-738-7305
@@ -273,12 +273,12 @@
 			- 이용요금: 공항↔호텔 델루나 성인 : 4,500원(편도) / 중,고등 : 3,600원(편도) / 초등 : 2,300원(편도)<br>
 			- 문의: 삼영교통 공항영업소(Tel 064-713-7000)<p>
 			
-			<p>제주국제공항→호텔 델루나</p>
+			<p>제주국제공항→엘리스 호텔</p>
 			
 			<p>- 운행시간: 06:20~22:00<br>
 			- 운행간격: 매 15~18분 간격</p>
 			
-			<p>호텔 델루나 → 제주국제공항</p>
+			<p>엘리스 호텔 → 제주국제공항</p>
 			
 			<p>- 운행시간: 06:40~22:20<br>
 			- 운행간격: 매회 약 20분 간격</p>
@@ -322,14 +322,14 @@
 
                         <div class="widget clearfix">
 
-                            <h3>(주)호텔 델루나 <span>02-1544-1111</span></h3>
-                            <p>63535, 제주특별자치도 서귀포시 중문관광로 72번길, 호텔 델루나.</p>
+                            <h3>(주)엘리스 호텔 <span>02-1544-1111</span></h3>
+                            <p>63535, 제주특별자치도 서귀포시 중문관광로 72번길, 엘리스 호텔</p>
 
                             <div class="line" style="margin: 30px 0;"></div>
 
                             <div class="col_half">
                                 <div class="widget subscribe-widget clearfix">
-                                    <h5>Email : hoteldelluna@hoteldelluna.co.kr
+                                    <h5>Email : AilceHotel@AilceHotel.co.kr
                                     <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
                                     <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
   								
@@ -408,7 +408,7 @@
 
                         <ul class="nobottommargin nobullets">
                             <li>63535, 제주특별자치도 </li>
-                            <li>서귀포시 중문관광로 72번길, 호텔 델루나.</li>
+                            <li>서귀포시 중문관광로 72번길, 엘리스 호텔</li>
                         </ul>
                         </div>                                                
                     </div>
@@ -426,7 +426,7 @@
                     <div class="col_half">
                         <img src="<c:url value='/resources/images/logo/footer-logo.png'/>" alt="" class="footer-logo standard-logo">
                         <img src="<c:url value='/resources/images/logo/footer-logo-large.png' />" alt="" class="footer-logo retina-logo">
-                        Copyright &copy; 2020 Hotel Delluna. All Rights Reserved.
+                        Copyright &copy; 2021 Ailce Hotel. All Rights Reserved.
                     </div>
 
                     <div class="col_half col_last tright">

@@ -99,7 +99,7 @@
                             </li>
                             <li><a href="<c:url value="/contact-1"/>"><div>고객의 소리</div></a></li>
                             <c:choose>
-	                            <c:when test="${m_id ne null}">
+	                            <c:when test="${userId ne null}">
 		                            <li><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>   
 		                            <li><a href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회 및 취소</div></a></li>
 	                            </c:when>
@@ -110,7 +110,7 @@
                             </c:choose>
                             
                                <c:choose>
-                               		<c:when test="${m_id eq null}">         
+                               		<c:when test="${userId eq null}">         
                            		 			<li  class="current"><a href="<c:url value ='/member/LoginLogOut'/>"><div>로그인</div></a>
                            		 		<ul>
                                 	    	<li><a href="<c:url value ='/member/LoginLogOut'/>"><div>로그인</div></a></li>
@@ -474,7 +474,7 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
 
                         <div class="widget clearfix">
 
-  <h3>(주)Ailce Hotel <span>02-1544-1111</span></h3>
+  <h3>(주)엘리스호텔 <span>02-1544-1111</span></h3>
                           
 
                             <div class="line" style="margin: 30px 0;"></div>
@@ -562,7 +562,7 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
 
                         <ul class="nobottommargin nobullets">
                              <li>63535, 제주특별자치도</li>
-                            <li>서귀포시 중문관광로 72번길, 호텔 델루나.</li>
+                            <li>서귀포시 중문관광로 72번길, 엘리스 호텔</li>
                         </ul>
                         </div>                                                
                     </div>
@@ -579,7 +579,7 @@ style="background-image: url('<c:url value="/resources/images/hotel-about/main.j
                     <div class="col_half">
                         <img src="<c:url value='/resources/images/logo/footer-logo.png'/>" alt="" class="footer-logo standard-logo">
                         <img src="<c:url value='/resources/images/logo/footer-logo-large.png' />" alt="" class="footer-logo retina-logo">
-                        Copyright &copy; 2020 Hotel Delluna. All Rights Reserved.
+                        Copyright &copy; 2021 Ailce Hotel. All Rights Reserved.
                     </div>
 
                     <div class="col_half col_last tright">

@@ -34,7 +34,7 @@
 
     <!-- Document Title
     ============================================= -->
-	<title>Hotel Delluna  | Notice</title>
+	<title>Ailce Hotel  | Notice</title>
 
 </head>
 
@@ -107,7 +107,7 @@
                             </li>
                             <li><a href="<c:url value="/contact-1"/>"><div>고객의 소리</div></a></li>
                             <c:choose>
-	                            <c:when test="${m_id ne null}">
+	                            <c:when test="${userId ne null}">
 		                            <li><a href="<c:url value='/reservation/r'/>"><div>예약하기</div></a></li>   
 		                            <li><a href="<c:url value='/reservation/ReservationSelect'/>"><div>예약조회 및 취소</div></a></li>
 	                            </c:when>
@@ -118,7 +118,7 @@
                             </c:choose>
                             
                                <c:choose>
-                               		<c:when test="${m_id eq null}">         
+                               		<c:when test="${userId eq null}">         
                            		 			<li><a href="<c:url value ='/member/LoginLogOut'/>"><div>로그인</div></a>
                            		 		<ul>
                                 	    	<li><a href="<c:url value ='/member/LoginLogOut'/>"><div>로그인</div></a></li>
@@ -164,47 +164,47 @@
 
                         <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
 
-                    <form class="nobottommargin" id="template-contactform"  action="<c:url value='/notice/WriteModifiy?b_no=${dto.b_no}&b_date=${dto.b_date}'/>" method="post">
+                    <form class="nobottommargin" id="template-contactform"  action="<c:url value='/notice/WriteModifiy?id=${notice.id}&date=${notice.date}'/>" method="post">
                             <div class="form-process"></div>
                                <div class="col_one_third">
-                                <label for="template-contactform-name">No <c:out value="${dto.b_no}"/><small>*</small></label>
+                                <label for="template-contactform-name">No <c:out value="${notice.id}"/><small>*</small></label>
                             </div>
                             
                                <div class="col_one_third">
                                  <label for="template-contactform-name">작성일 <small>*</small></label>
-                                 <fmt:formatDate value="${dto.b_date}" pattern="yyyy-MM-dd" />
+                                 <fmt:formatDate value="${notice.date}" pattern="yyyy-MM-dd" />
                               </div>
                          		 
                             <div class="col_one_third">
                                 <label for="template-contactform-name">관리자 <small>*</small></label>
-                               <c:out value="${dto.b_writer}"/>
+                               <c:out value="${notice.writer}"/>
                             </div>
                             
                               <font id="RemoveFont" color="red" size="2"> </font>
                                     
                                   <c:choose>
-                                  <c:when test="${m_id eq 'admin'}">
+                                  <c:when test="${userId eq 'admin'}">
                             <div class="clear"></div>
                             <div class="col_two_third" id="Content_title">
                                 <label for="template-contactform-subject">제목 <small>*</small></label>
-                                <input type="text" id="template-contactform-subject" name="b_title" value="<c:out value="${dto.b_title}"/>"  class="required sm-form-control"  maxlength="40" />
+                                <input type="text" id="template-contactform-subject" name="b_title" value="<c:out value="${notice.title}"/>"  class="required sm-form-control"  maxlength="40" />
                             </div>
                             <div class="clear"></div>
                             <div class="col_full" id="Content_detail">
                                 <label for="template-contactform-message">내용 <small>*</small></label>
-                                <textarea class="required sm-form-control" id="template-contactform-message" name="b_detail" rows="15" cols="30" ><c:out value='${dto.b_detail}'/></textarea>
+                                <textarea class="required sm-form-control" id="template-contactform-message" name="b_detail" rows="15" cols="30" ><c:out value='${notice.detail}'/></textarea>
                             </div>
                             </c:when>
                             <c:otherwise>
                              <div class="clear"></div>
                             <div class="col_two_third" id="Content_title">
                                 <label for="template-contactform-subject">제목 <small>*</small></label>
-                                <input type="text" id="template-contactform-subject" name="b_title" value="<c:out value="${dto.b_title}"/>"  class="required sm-form-control"  readonly="readonly" maxlength="40" />
+                                <input type="text" id="template-contactform-subject" name="b_title" value="<c:out value="${notice.title}"/>"  class="required sm-form-control"  readonly="readonly" maxlength="40" />
                             </div>
                             <div class="clear"></div>
                             <div class="col_full" id="Content_detail">
                                 <label for="template-contactform-message">내용 <small>*</small></label>
-                                <textarea class="required sm-form-control" id="template-contactform-message" name="b_detail" rows="15" cols="30" readonly="readonly"><c:out value='${dto.b_detail}'/></textarea>
+                                <textarea class="required sm-form-control" id="template-contactform-message" name="b_detail" rows="15" cols="30" readonly="readonly"><c:out value='${notice.detail}'/></textarea>
                             </div>
                             </c:otherwise>
                             
@@ -215,7 +215,7 @@
   							
                             <div class="col_full">
                                <!--  <button class="btn button nomargin"  id="template-contactform-submit" name="template-contactform-submit" value="submit">작성</button> -->
-                               <c:if test="${m_id eq 'admin'}">
+                               <c:if test="${userId eq 'admin'}">
                                <button  class="btn button nomargin"  id="ContentModify" >수정</button>
                                  <button type="button" class="btn button nomargin"  id="ContentRemove" onclick="NoticeDelete()" >삭제</button>
                                  </c:if>
@@ -230,7 +230,7 @@
               						$.ajax({
               							type:'GET',
               							url:'<c:url value="/notice/NoticeDelete"/>',
-              							data: {"b_no" : "${dto.b_no}"},
+              							data: {"id" : "${notice.id}"},
               							success:function(result){
               								$("#Content_title").hide();
               								$("#Content_detail").hide();
@@ -243,24 +243,6 @@
               						else return false;
               					}//function NoticeDelete
             		   </script>
-                      <!--   <script type="text/javascript">
-
-                            $("#template-contactform").validate({
-                                submitHandler: function(form) {
-                                    $('.form-process').fadeIn();
-                                    $(form).ajaxSubmit({
-                                        target: '#contact-form-result',
-                                        success: function() {
-                                            $('.form-process').fadeOut();
-                                            $('#template-contactform').find('.sm-form-control').val('');
-                                            $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
-                                            IGNITE.widget.notifications($('#contact-form-result'));
-                                        }
-                                    });
-                                }
-                            });
-
-                        </script> -->
 
                     </div><!-- .postcontent end -->
 				
@@ -270,7 +252,7 @@
 
                         <address>
                             <strong>Address:</strong><br>
-                           63535, 제주특별자치도 서귀포시 중문관광로 72번길, 호텔 델루나.
+                           63535, 제주특별자치도 서귀포시 중문관광로 72번길, 엘리스 호텔
                         </address>
                         <strong>Phone:</strong> (341) 457 432678<br>
                         <strong>Fax:</strong> (341) 457 538478<br>
@@ -315,14 +297,14 @@
 
                         <div class="widget clearfix">
 
-                            <h3>(주)호텔 델루나 <span>02-1544-1111</span></h3>
-                            <p>63535, 제주특별자치도 서귀포시 중문관광로 72번길, 호텔 델루나.</p>
+                            <h3>(주)엘리스 호텔 <span>02-1544-1111</span></h3>
+                            <p>63535, 제주특별자치도 서귀포시 중문관광로 72번길, 엘리스 호텔</p>
 
                             <div class="line" style="margin: 30px 0;"></div>
 
                             <div class="col_half">
                                 <div class="widget subscribe-widget clearfix">
-                                    <h5>Email : hoteldelluna@hoteldelluna.co.kr
+                                    <h5>Email : AilceHotel@AilceHotel.co.kr
                                     <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
                                     <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
   								
@@ -400,7 +382,7 @@
 
                         <ul class="nobottommargin nobullets">
                             <li>63535, 제주특별자치도 </li>
-                            <li>서귀포시 중문관광로 72번길, 호텔 델루나.</li>
+                            <li>서귀포시 중문관광로 72번길, 엘리스 호텔</li>
                         </ul>
                         </div>                                                
                     </div>
@@ -417,7 +399,7 @@
                     <div class="col_half">
                         <img src="<c:url value='/resources/images/logo/footer-logo.png'/>" alt="" class="footer-logo standard-logo">
                         <img src="<c:url value='/resources/images/logo/footer-logo-large.png' />" alt="" class="footer-logo retina-logo">
-                        Copyright &copy; 2020 Hotel Delluna. All Rights Reserved.
+                        Copyright &copy; 2021 Ailce Hotel. All Rights Reserved.
                     </div>
 
                     <div class="col_half col_last tright">

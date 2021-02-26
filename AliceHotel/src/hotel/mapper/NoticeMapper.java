@@ -17,7 +17,7 @@ import hotel.model.Pagination;
 public interface NoticeMapper {
 	
 	//작성
-	@Insert("insert into notice(title, detail, writer, date) values(#{title}, #{detail}, #{writer}, #{date} )")
+	@Insert("insert into notice(title, detail, writer) values(#{title}, #{detail}, #{writer} )")
 	public int NoticeInsert(Notice notice);
 	
 	//삭제
@@ -29,15 +29,19 @@ public interface NoticeMapper {
 	public Notice NoticeDetail(int id);
 	
 	//수정
-	@Update("update notice set title=#{title}, detail=#{detail}, writer=#{writer} date id=#{date}")
+	@Update("update notice set title=#{title}, detail=#{detail}, writer=#{writer} where id=#{id}")
 	public int Noticeupdate(Notice notice);
 	
 	//총 게시글 개수 확인
 	@Select("select count(*) as listCnt from notice")
 	public int NoticeListCnt();
+	
+	//카운터 수정
+	@Update("update notice set count = count +1 where id = #{id}")
+	public int NoticeCountUpdate(int id);
 
 	//목록보기
-	@Select("select * from notice  order by id desc limit #{startList}, #{listSize}")
+	@Select("select * from notice order by id desc limit #{startList}, #{listSize}")
 	public List<Notice> NoticeList(Pagination pagination);
 
 }
