@@ -11,12 +11,11 @@ public class Member {
 	private String homeMail;
 	private String generalAddress;
 	private String detailedAddress;
-	private byte manager;
 	
 	public Member() {}
 
 	public Member(int id, String userId, String password, String name, String phone, String email, String homeMail,
-			String generalAddress, String detailedAddress, byte manager) {
+			String generalAddress, String detailedAddress) {
 		super();
 		this.id = id;
 		this.userId = userId;
@@ -27,7 +26,6 @@ public class Member {
 		this.homeMail = homeMail;
 		this.generalAddress = generalAddress;
 		this.detailedAddress = detailedAddress;
-		this.manager = manager;
 	}
 
 	public int getId() {
@@ -102,19 +100,10 @@ public class Member {
 		this.detailedAddress = detailedAddress;
 	}
 
-	public byte getManager() {
-		return manager;
-	}
-
-	public void setManager(byte manager) {
-		this.manager = manager;
-	}
-
 	@Override
 	public String toString() {
 		return "Member [id=" + id + ", userId=" + userId + ", password=" + password + ", name=" + name + ", phone="
 				+ phone + ", email=" + email + ", homeMail=" + homeMail + ", generalAddress=" + generalAddress
-				+ ", detailedAddress=" + detailedAddress + ", manager=" + manager + "]";
+				+ ", detailedAddress=" + detailedAddress + "]";
 	}
-
 }
